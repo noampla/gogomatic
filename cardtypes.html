@@ -1,265 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gogomati - The Collection</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gogomatic – The Collection</title>
+
+  <!-- Orbitron for all text -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Collection CSS -->
+  <link rel="stylesheet" href="cardtypes.css">
 </head>
 <body>
-  <nav>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="top-nav">
     <ul>
       <li><a href="index.html">Arena</a></li>
       <li><a href="rulebook.html">Grimoire</a></li>
-      <li><a href="cardtypes.html">Collection</a></li>
+      <li><a href="cardtypes.html" class="active">Collection</a></li>
       <li><a href="strategy.html">Codex</a></li>
     </ul>
-    <button id="dark-mode-toggle">Dark Mode</button>
   </nav>
-  
-  <main>
-    <section class="page-title">
-      <h1>Summon the Cards</h1>
-    </section>
+
+  <!-- ========== HERO SECTION ========== -->
+  <header class="collection-hero">
+    <div class="collection-overlay"></div>
     
-    <!-- Curse Cards -->
-    <section class="card-section">
-      <h2>Curse Cards</h2>
+    <!-- Flexbox wrapper to align card & text side-by-side -->
+    <div class="collection-flex">
+      <div class="card-back-container">
+        <img src="assets/images/gogomatic-logo.png" alt="Gogomatic Card Back" class="card-back" />
+      </div>
+  
+      <div class="collection-content">
+        <h1>The Gogomatic Collection</h1>
+        <p>Discover the cursed, blessed, and magical cards that shape your fate.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main class="collection-main">
+
+    <!-- CURSE CARDS -->
+    <section class="cards-section">
+      <h2>Curses</h2>
+      <p class="section-desc">
+        Each player receives one Curse at the start—limit your moves, warp your speech, or bind your hands.  
+        Disobey and the deck may claim you.
+      </p>
       <div class="card-gallery">
-        <!-- Exclude any "back" images -->
-        <div class="card flip-card" data-title="Announcer Curse">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="assets/images/curses/curse-announcer.png" alt="Announcer Curse">
-            </div>
-            <div class="flip-card-back">
-              <p><strong>Announcer Curse:</strong> Announce when a special card is played.</p>
-            </div>
-          </div>
+
+        <!-- Example card entry -->
+        <div class="card-item">
+          <img src="assets/images/curses/curse-announcer.png" alt="Announcer Curse">
+          <h3>Announcer Curse</h3>
+          <p>Must announce when any action is taken (e.g. playing a Special Card).</p>
         </div>
-        <div class="card flip-card" data-title="Apology Curse">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="assets/images/curses/curse-apology.png" alt="Apology Curse">
-            </div>
-            <div class="flip-card-back">
-              <p><strong>Apology Curse:</strong> Utter an apology when a player is eliminated.</p>
-            </div>
-          </div>
+        <div class="card-item">
+          <img src="assets/images/curses/curse-apology.png" alt="Apology Curse">
+          <h3>Apology Curse</h3>
+          <p>Must say "sorry" whenever a player is eliminated.</p>
         </div>
-        <div class="card flip-card" data-title="Compliment Curse">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="assets/images/curses/curse-compliment.png" alt="Compliment Curse">
-            </div>
-            <div class="flip-card-back">
-              <p><strong>Compliment Curse:</strong> Offer a compliment when drawing a card.</p>
-            </div>
-          </div>
+        <div class="card-item">
+          <img src="assets/images/curses/curse-compliment.png" alt="Compliment Curse">
+          <h3>Compliment Curse</h3>
+          <p>Must compliment someone whenever a player draws a card.</p>
         </div>
-        <div class="card flip-card" data-title="Gogomati Curse">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="assets/images/curses/curse-gogomatic.png" alt="Gogomati Curse">
-            </div>
-            <div class="flip-card-back">
-              <p><strong>Gogomati Curse:</strong> Utter "Gogomati" before every action.</p>
-            </div>
-          </div>
+        <div class="card-item">
+          <img src="assets/images/curses/curse-gogomatic.png" alt="Gogomatic Curse">
+          <h3>Gogomatic Curse</h3>
+          <p>Must say "Gogomatic" before drawing a card.</p>
         </div>
-        <div class="card flip-card" data-title="Weak Hand Curse">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="assets/images/curses/curse-hand.png" alt="Weak Hand Curse">
-            </div>
-            <div class="flip-card-back">
-              <p><strong>Weak Hand Curse:</strong> Use only your non‑dominant hand.</p>
-            </div>
-          </div>
+        <div class="card-item">
+          <img src="assets/images/curses/curse-hand.png" alt="Weak Hand Curse">
+          <h3>Weak Hand Curse</h3>
+          <p>Use only your non-dominant hand.</p>
         </div>
-        <div class="card flip-card" data-title="Names Curse">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="assets/images/curses/curse-names.png" alt="Names Curse">
-            </div>
-            <div class="flip-card-back">
-              <p><strong>Names Curse:</strong> Do not mention another player's name.</p>
-            </div>
-          </div>
+        <div class="card-item">
+          <img src="assets/images/curses/curse-names.png" alt="Avoid-Name Curse">
+          <h3>Avoid-Name Curse</h3>
+          <p>Cannot say another player's name.</p>
         </div>
-        <div class="card flip-card" data-title="Royal Curse">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="assets/images/curses/curse-royal.png" alt="Royal Curse">
-            </div>
-            <div class="flip-card-back">
-              <p><strong>Royal Curse:</strong> Refer to yourself with a royal title.</p>
-            </div>
-          </div>
+        <div class="card-item">
+          <img src="assets/images/curses/curse-royal.png" alt="Royal Curse">
+          <h3>Royal Curse</h3>
+          <p>Refer to yourself with a royal title (e.g., "His Majesty").</p>
         </div>
-        <div class="card flip-card" data-title="Salute Curse">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="assets/images/curses/curse-sallute.png" alt="Salute Curse">
-            </div>
-            <div class="flip-card-back">
-              <p><strong>Salute Curse:</strong> Salute when a player is eliminated.</p>
-            </div>
-          </div>
+        <div class="card-item">
+          <img src="assets/images/curses/curse-sallute.png" alt="Salute Curse">
+          <h3>Salute Curse</h3>
+          <p>Must salute whenever a player is eliminated.</p>
         </div>
-        <div class="card flip-card" data-title="Silence Curse">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="assets/images/curses/curse-silence.png" alt="Silence Curse">
-            </div>
-            <div class="flip-card-back">
-              <p><strong>Silence Curse:</strong> You cannot speak at all.</p>
-            </div>
-          </div>
+        <div class="card-item">
+          <img src="assets/images/curses/curse-silence.png" alt="Silence Curse">
+          <h3>Silence Curse</h3>
+          <p>You cannot speak at all.</p>
         </div>
-        <div class="card flip-card" data-title="Third-Person Curse">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="assets/images/curses/curse-third-person.png" alt="Third-Person Curse">
-            </div>
-            <div class="flip-card-back">
-              <p><strong>Third-Person Curse:</strong> Speak in the third person.</p>
-            </div>
-          </div>
+        <div class="card-item">
+          <img src="assets/images/curses/curse-third-person.png" alt="Third-Person Curse">
+          <h3>Third-Person Curse</h3>
+          <p>Must speak in the third person at all times.</p>
         </div>
-        <div class="card flip-card" data-title="Whisper Curse">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="assets/images/curses/curse-whisper.png" alt="Whisper Curse">
-            </div>
-            <div class="flip-card-back">
-              <p><strong>Whisper Curse:</strong> Whisper during your turn.</p>
-            </div>
-          </div>
+        <div class="card-item">
+          <img src="assets/images/curses/curse-whisper.png" alt="Whisper Curse">
+          <h3>Card Whisperer Curse</h3>
+          <p>Must whisper for the entire game.</p>
         </div>
+        <div class="card-item">
+          <img src="assets/images/curses/curse-optimist.png" alt="Optimist Curse">
+          <h3>Optimist Curse</h3>
+          <p>Must always say something positive.</p>
+        </div>
+
       </div>
     </section>
-    
-    <!-- Blessing Cards -->
-    <section class="card-section">
+
+    <!-- BLESSINGS -->
+    <section class="cards-section">
       <h2>Blessings</h2>
+      <p class="section-desc">
+        Gather four to win instantly. Each Blessing grants a glimmer of hope in a realm of curses.
+      </p>
       <div class="card-gallery">
-        <div class="card flip-card" data-title="Luck Blessing">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="assets/images/blessings/bless-luck.png" alt="Luck Blessing">
-            </div>
-            <div class="flip-card-back">
-              <p><strong>Luck Blessing:</strong> Fortune favors you when this card shines.</p>
-            </div>
-          </div>
+
+        <div class="card-item">
+          <img src="assets/images/blessings/bless-luck.png" alt="Luck Blessing">
+          <h3>Luck Blessing</h3>
+          <p>Fortune aligns your draw.</p>
         </div>
-        <div class="card flip-card" data-title="Phoenix Blessing">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="assets/images/blessings/bless-phoenix.png" alt="Phoenix Blessing">
-            </div>
-            <div class="flip-card-back">
-              <p><strong>Phoenix Blessing:</strong> Revives your spirit with fiery power.</p>
-            </div>
-          </div>
+        <div class="card-item">
+          <img src="assets/images/blessings/bless-strength.png" alt="Strength Blessing">
+          <h3>Strength Blessing</h3>
+          <p>Empowers your hand with mighty force.</p>
         </div>
-        <div class="card flip-card" data-title="Protection Blessing">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="assets/images/blessings/bless-protaction.png" alt="Protection Blessing">
-            </div>
-            <div class="flip-card-back">
-              <p><strong>Protection Blessing:</strong> Shields you from harm with divine energy.</p>
-            </div>
-          </div>
+        <div class="card-item">
+          <img src="assets/images/blessings/bless-protaction.png" alt="Protection Blessing">
+          <h3>Protection Blessing</h3>
+          <p>Shields you from impending doom.</p>
         </div>
-        <div class="card flip-card" data-title="Strength Blessing">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="assets/images/blessings/bless-strength.png" alt="Strength Blessing">
-            </div>
-            <div class="flip-card-back">
-              <p><strong>Strength Blessing:</strong> Empowers you with unstoppable force.</p>
-            </div>
-          </div>
+        <div class="card-item">
+          <img src="assets/images/blessings/bless-wisdom.png" alt="Wisdom Blessing">
+          <h3>Wisdom Blessing</h3>
+          <p>Enhances your insight and strategy.</p>
         </div>
-        <div class="card flip-card" data-title="Time Blessing">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="assets/images/blessings/bless-time.png" alt="Time Blessing">
-            </div>
-            <div class="flip-card-back">
-              <p><strong>Time Blessing:</strong> Bends time in your favor.</p>
-            </div>
-          </div>
+        <div class="card-item">
+          <img src="assets/images/blessings/bless-time.png" alt="Time Blessing">
+          <h3>Time Blessing</h3>
+          <p>Manipulates time in your favor.</p>
         </div>
-        <div class="card flip-card" data-title="Wisdom Blessing">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="assets/images/blessings/bless-wisdom.png" alt="Wisdom Blessing">
-            </div>
-            <div class="flip-card-back">
-              <p><strong>Wisdom Blessing:</strong> Grants you unparalleled insight.</p>
-            </div>
-          </div>
+        <div class="card-item">
+          <img src="assets/images/blessings/bless-phoenix.png" alt="Phoenix Blessing">
+          <h3>Phoenix Blessing</h3>
+          <p>Ignites rebirth from ashes.</p>
         </div>
+
       </div>
     </section>
-    
-    <!-- Special Cards -->
-    <section class="card-section">
+
+    <!-- SPECIAL CARDS -->
+    <section class="cards-section">
       <h2>Special Cards</h2>
+      <p class="section-desc">
+        Game-changers that can seal an opponent’s fate or free you from your own doom.
+      </p>
       <div class="card-gallery">
-        <div class="card flip-card" data-title="Book of Spell">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="assets/images/specials/special-book-of-spell.png" alt="Book of Spell">
-            </div>
-            <div class="flip-card-back">
-              <p><strong>Book of Spell:</strong> Marks a player for elimination; its removal cancels the curse.</p>
-            </div>
-          </div>
+        <div class="card-item">
+          <img src="assets/images/specials/special-book-of-spell.png" alt="Book of Spell">
+          <h3>Book of Spells</h3>
+          <p>Mark a foe’s Curse for activation.</p>
         </div>
-        <div class="card flip-card" data-title="Fortune Draw">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="assets/images/specials/special-fortune-draw.png" alt="Fortune Draw">
-            </div>
-            <div class="flip-card-back">
-              <p><strong>Fortune Draw:</strong> Grants two extra cards from the deck.</p>
-            </div>
-          </div>
+        <div class="card-item">
+          <img src="assets/images/specials/special-spellbreaker.png" alt="Spellbreaker">
+          <h3>Spellbreaker</h3>
+          <p>Nullify the Book of Spells with swift magic.</p>
         </div>
-        <div class="card flip-card" data-title="Spellbreaker">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="assets/images/specials/special-spellbreaker.png" alt="Spellbreaker">
-            </div>
-            <div class="flip-card-back">
-              <p><strong>Spellbreaker:</strong> Counters the Book of Spell with swift magic.</p>
-            </div>
-          </div>
+        <div class="card-item">
+          <img src="assets/images/specials/special-spell-of-spell.png" alt="Spell of Spells">
+          <h3>Spell of Spells</h3>
+          <p>A wild card—complete Blessings or finish a Curse set.</p>
         </div>
-        <div class="card flip-card" data-title="Spell of Spell">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="assets/images/specials/special-spell-of-spell.png" alt="Spell of Spell">
-            </div>
-            <div class="flip-card-back">
-              <p><strong>Spell of Spell:</strong> A wild card that completes blessings or acts as a curse trigger.</p>
-            </div>
-          </div>
+        <div class="card-item">
+          <img src="assets/images/specials/special-fortune-draw.png" alt="Fortune Draw">
+          <h3>Fortune Draw</h3>
+          <p>Draw 2 extra cards at a crucial moment.</p>
         </div>
       </div>
     </section>
+
   </main>
-  
-  <footer>
-    <p>&copy; 2025 Gogomati. All Rights Reserved.</p>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="collection-footer">
+    <p>&copy; 2025 Gogomatic. All Rights Reserved.</p>
   </footer>
-  
-  <script src="script.js"></script>a
+
 </body>
 </html>

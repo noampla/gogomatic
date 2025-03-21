@@ -1,0 +1,193 @@
+/* ========== RESET & BASE STYLES ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Use Orbitron font for all text */
+  body {
+    font-family: 'Orbitron', sans-serif;
+    background: #0b0b0b;
+    color: #eeeeee;
+  }
+  
+  /* ========== NAV ========== */
+  .top-nav {
+    background: #000;
+    padding: 10px 20px;
+    text-align: center;
+  }
+  .top-nav ul {
+    list-style: none;
+    display: inline-flex;
+    gap: 20px;
+  }
+  .top-nav ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+  }
+  .top-nav ul li a:hover {
+    color: #ffd700;
+  }
+  .top-nav ul li .active {
+    color: #ffd700;
+    font-weight: bold;
+  }
+  
+  /* ========== HERO SECTION ========== */
+  .collection-hero {
+    position: relative;
+    height: 40vh;
+    background: url("assets/images/collection-bg.jpg") center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .collection-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .collection-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .collection-content h1 {
+    font-size: 2.5rem;
+    color: #ffd700;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+  }
+  .collection-content p {
+    font-size: 1.2rem;
+    color: #f0f0f0;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* ========== MAIN COLLECTION ========== */
+  .collection-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  .cards-section {
+    margin-bottom: 60px;
+    text-align: center;
+  }
+  .cards-section h2 {
+    font-size: 1.8rem;
+    color: #ffd700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .section-desc {
+    font-size: 1rem;
+    color: #ccc;
+    max-width: 700px;
+    margin: 0 auto 25px auto;
+    line-height: 1.4;
+  }
+  
+  /* ========== CARD GALLERY ========== */
+  .card-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    justify-items: center;
+  }
+  
+  .card-item {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    transition: transform 0.3s;
+    width: 180px;
+    text-align: center;
+  }
+  .card-item:hover {
+    transform: translateY(-5px);
+  }
+  .card-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 12px;
+  }
+  .card-item h3 {
+    color: #ffd700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  .card-item p {
+    font-size: 0.9rem;
+    color: #ddd;
+    line-height: 1.3;
+  }
+  
+  /* ========== FOOTER ========== */
+  .collection-footer {
+    background: #000;
+    text-align: center;
+    padding: 20px;
+    color: #999;
+    font-size: 0.9rem;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .collection-hero {
+      height: 30vh;
+    }
+    .collection-content h1 {
+      font-size: 2rem;
+    }
+    .collection-content p {
+      font-size: 1rem;
+    }
+    .cards-section h2 {
+      font-size: 1.4rem;
+    }
+  }
+  
+ /* Flex container for hero section */
+.collection-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem; /* Space between image & text */
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: left;
+}
+
+/* Card image container */
+.card-back-container {
+  flex-shrink: 0;
+  width: 120px; /* Adjust size */
+}
+
+/* Make sure the image scales properly */
+.card-back {
+  width: 100%;
+  height: auto;
+  opacity: 0.85;
+  transition: opacity 0.3s;
+}
+
+.card-back:hover {
+  opacity: 1;
+}
+
+/* Make sure text takes full space */
+.collection-content {
+  flex-grow: 1;
+}

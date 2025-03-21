@@ -3,49 +3,144 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gogomati – Enter the Cursed Arena</title>
-  <!-- Orbitron for headers, Lato for body -->
+  <title>Gogomatic – Curses & Chaos</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <!-- Optional Background Audio -->
+
+  <!-- Background Audio (Optional) -->
   <audio id="bg-audio" loop>
     <source src="assets/audio/ambient-magic.mp3" type="audio/mpeg">
     Your browser does not support audio.
   </audio>
 
-  <!-- HEADER / HERO -->
-  <header class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1 class="glitch" data-text="Welcome to the Cursed Arena">Welcome to the Cursed Arena</h1>
-      <p>Step into the world of Gogomati—where curses bind and magic rules. Master the chaos to claim your destiny!</p>
-      <div class="hero-buttons">
-        <a href="rulebook.html" class="btn">See the Rules</a>
-        <a href="cardtypes.html" class="btn">Meet the Cards</a>
-        <a href="strategy.html" class="btn">Learn the Magic</a>
-      </div>
-      <button id="audio-toggle" class="btn audio-btn">Enable Audio</button>
-    </div>
-  </header>
-
-  <!-- NAVIGATION -->
+  <!-- =========== NAVIGATION =========== -->
   <nav>
+    <div class="logo-area">
+      <a href="index.html">
+        <!-- Replace with your real logo -->
+        <img src="assets/images/gogomatic-logo.png" alt="Gogomatic Logo" class="gogomatic-logo"/>
+      </a>
+    </div>
     <ul>
       <li><a href="index.html">Arena</a></li>
       <li><a href="rulebook.html">Grimoire</a></li>
       <li><a href="cardtypes.html">Collection</a></li>
       <li><a href="strategy.html">Codex</a></li>
     </ul>
-    <button id="dark-mode-toggle">Dark Mode</button>
   </nav>
 
-  <!-- FOOTER -->
+  <!-- =========== HERO SECTION =========== -->
+  <header class="hero">
+    <!-- Dark overlay for readability -->
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>GOGOMATIC</h1>
+      <p>A chaotic card game of curses and cunning. Will your strategy rise above the mayhem—or crumble under dark magic?</p>
+      <div class="hero-buttons">
+        <!-- Update with your real store/purchase link -->
+        <a href="#" class="btn primary-btn">Summon Your Deck</a>
+        <a href="rulebook.html" class="btn secondary-btn">Learn the Curses</a>
+      </div>
+      <button id="audio-toggle" class="btn audio-btn">Enable Audio</button>
+    </div>
+  </header>
+
+  <!-- =========== MAIN CONTENT =========== -->
+  <main>
+    <!-- INTRO SECTION -->
+    <section class="intro-section">
+      <h2>Master the Chaos</h2>
+      <p>
+        In Gogomatic, every card is a potential advantage—or a looming disaster.  
+        Draw Blessings to secure victory, or risk a deadly Curse.  
+        The fate of each round hinges on your nerve, strategy, and a bit of luck.
+      </p>
+      <p>
+        Are you daring enough to challenge the unknown?
+      </p>
+      <a href="cardtypes.html" class="btn">Explore the Deck</a>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="features-section">
+      <div class="feature">
+        <h3>Curses in Play</h3>
+        <p>
+          Each player begins with a unique Curse—like speaking in whispers or avoiding a certain word.  
+          Slip up, and you pay the price. Survive by mastering your own limitation.
+        </p>
+      </div>
+      <div class="feature">
+        <h3>Seek the Blessings</h3>
+        <p>
+          Find four Blessings to claim instant victory. But watch out—rivals might block you or send their cursed fate your way.
+        </p>
+      </div>
+      <div class="feature">
+        <h3>Special Power Cards</h3>
+        <p>
+          Unleash the <em>Book of Spells</em> to activate someone’s Curse,  
+          or shatter it with <em>Spellbreaker</em>. Timing is everything.
+        </p>
+      </div>
+    </section>
+
+    <!-- CARD PREVIEW -->
+    <section class="card-preview-section">
+      <h2>See What's in the Deck</h2>
+      <div class="card-preview-gallery">
+        <!-- Update image paths -->
+        <img src="assets/images/curses/curse-silence.png" alt="Silence Curse" />
+        <img src="assets/images/blessings/bless-luck.png" alt="Luck Blessing" />
+        <img src="assets/images/specials/special-book-of-spell.png" alt="Book of Spell" />
+      </div>
+      <p>
+        Each draw could be your salvation—or your downfall. Proceed wisely.
+      </p>
+      <a href="cardtypes.html" class="btn">Full Collection</a>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section">
+      <h2>What Players Say</h2>
+      <blockquote>
+        “Wild, unpredictable, and absolutely hilarious. Gogomatic turned our game night upside down!”
+        <cite>– A Daring Player</cite>
+      </blockquote>
+      <blockquote>
+        “It’s quick to learn, but brimming with strategy. We can’t stop coming back for more curses!”
+        <cite>– The Lucky Draw</cite>
+      </blockquote>
+    </section>
+  </main>
+
+  <!-- =========== FOOTER =========== -->
   <footer>
-    <p>&copy; 2025 Gogomati. All Rights Reserved.</p>
+    <p>&copy; 2025 Gogomatic. All Rights Reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- =========== JS =========== -->
+  <script>
+    // Audio Toggle
+    const audioToggle = document.getElementById('audio-toggle');
+    const bgAudio = document.getElementById('bg-audio');
+    if (audioToggle && bgAudio) {
+      audioToggle.addEventListener('click', () => {
+        if (bgAudio.paused) {
+          bgAudio.volume = 0.2;
+          bgAudio.play();
+          audioToggle.textContent = 'Audio On';
+        } else {
+          bgAudio.pause();
+          audioToggle.textContent = 'Enable Audio';
+        }
+      });
+    }
+  </script>
 </body>
 </html>

@@ -3,103 +3,261 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gogomati – The Digital Grimoire</title>
-  <!-- Fonts (Orbitron for headers, Lato for body) -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Lato:wght@400;700&display=swap"
-    rel="stylesheet"
-  >
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="styles.css">
+  <title>Gogomatic – Rulebook</title>
+
+  <!-- Orbitron for all text -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Rulebook CSS -->
+  <link rel="stylesheet" href="rulebook.css">
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <nav>
+
+  <!-- =========== NAVIGATION (Optional) =========== -->
+  <nav class="top-nav">
     <ul>
       <li><a href="index.html">Arena</a></li>
-      <li><a href="rulebook.html">Grimoire</a></li>
+      <li><a href="rulebook.html" class="active">Rulebook</a></li>
       <li><a href="cardtypes.html">Collection</a></li>
       <li><a href="strategy.html">Codex</a></li>
     </ul>
-    <button id="dark-mode-toggle">Dark Mode</button>
   </nav>
 
-  <!-- Main Content -->
-  <main class="grimoire">
-    <!-- Intro Panel -->
-    <section class="intro-panel">
-      <h1>The Digital Grimoire</h1>
-      <p>Enter this holographic spellbook to learn the arcane rules that bind the game.</p>
+  <!-- =========== HEADER (Optional) =========== -->
+  <header class="rulebook-hero">
+    <div class="rulebook-overlay"></div>
+    <div class="rulebook-content">
+      <h1>Gogomatic Rulebook</h1>
+      <p>Dive into the cursed depths of Gogomatic’s official rules.</p>
+    </div>
+  </header>
+
+  <!-- =========== MAIN CONTENT =========== -->
+  <main class="rulebook-main">
+
+    <!-- GAME OVERVIEW -->
+    <section class="rules-section">
+      <h2>Game Overview</h2>
+      <p>
+        Gogomatics is a chaotic, cursed card game where players must survive magical limitations, sabotage opponents, and attempt to win by either outlasting everyone or gathering four special blessings. Each player starts with a curse, forcing them to follow absurd rules. Throughout the game, players draw from a deck containing Curses, Blessings, and Special Cards, using strategy and timing to eliminate rivals or secure victory.
+      </p>
     </section>
 
-    <!-- Accordion Section -->
-    <section class="accordion">
-      <!-- Accordion Item 1 -->
-      <div class="accordion-item">
-        <button class="accordion-header">
-          <span>Game Setup</span>
-          <span class="accordion-arrow">&#9656;</span>
-        </button>
-        <div class="accordion-content">
-          <p>
-            Remove all Special Cards. Each player receives one visible curse card.  
-            Remove duplicates of each player’s curse from the deck.  
-            Deal 5 cards to each player (or fewer if the deck is low).
-          </p>
-        </div>
-      </div>
+    <!-- GAME SETUP -->
+    <section class="rules-section">
+      <h2>Game Setup</h2>
+      <h3>Choosing Curses</h3>
+      <ul>
+        <li>Before the game starts, players can either choose which curses are in play or randomly draw one from the full list.</li>
+        <li>There must be the same number of curses in play as there are players.</li>
+        <li>Each player randomly draws a Curse Card from the Curses Deck and places it face-up in front of them.</li>
+      </ul>
+      <p>
+        <strong>Important:</strong> Any Curse Cards not chosen for the game are removed from the Main Game Deck.
+      </p>
 
-      <!-- Accordion Item 2 -->
-      <div class="accordion-item">
-        <button class="accordion-header">
-          <span>Turn Mechanics</span>
-          <span class="accordion-arrow">&#9656;</span>
-        </button>
-        <div class="accordion-content">
-          <p>
-            On your turn, you must take a card from either the face‑up pile or the deck.  
-            If you don’t, you must play a Special Card (if available).  
-            Don’t exceed 5 cards in hand; discard extra cards face‑down.
-          </p>
-        </div>
-      </div>
+      <h3>Deck Preparation</h3>
+      <ul>
+        <li>Remove from the Main Game Deck any Curse Cards that were not chosen for the game.</li>
+        <li>Shuffle the remaining deck.</li>
+      </ul>
 
-      <!-- Accordion Item 3 -->
-      <div class="accordion-item">
-        <button class="accordion-header">
-          <span>Elimination</span>
-          <span class="accordion-arrow">&#9656;</span>
-        </button>
-        <div class="accordion-content">
-          <p>
-            Breaking your curse or drawing 3 extra copies of it from the deck results  
-            in elimination. Beware the cursed fate!
-          </p>
-        </div>
-      </div>
+      <h3>Starting Hand</h3>
+      <ul>
+        <li>Each player is dealt 3 cards from the Main Game Deck.</li>
+        <li>If a player receives a Special Card, they must place one face-up in their Special Card Slot.</li>
+        <li>A player can only hold 1 Special Card at a time—if they receive more than one, they must choose one to keep and discard the rest to the Trash Deck.</li>
+      </ul>
 
-      <!-- Accordion Item 4 -->
-      <div class="accordion-item">
-        <button class="accordion-header">
-          <span>Victory Conditions</span>
-          <span class="accordion-arrow">&#9656;</span>
-        </button>
-        <div class="accordion-content">
-          <p>
-            Win by being the last player alive or by collecting four Blessing cards  
-            for an instant victory.
-          </p>
-        </div>
-      </div>
+      <h3>Deciding First Player</h3>
+      <p>
+        Suggested method: Each player draws a card from the deck—whoever gets the highest number or a “magical” card (like a Blessing) goes first. Turns proceed clockwise.
+      </p>
     </section>
+
+    <!-- DECKS IN PLAY -->
+    <section class="rules-section">
+      <h2>Decks in Play</h2>
+      <p>
+        Three central decks are placed in the middle:
+      </p>
+      <ul>
+        <li><strong>Take Deck (Face Down):</strong> The main draw pile.</li>
+        <li><strong>Open Deck (Face Up):</strong> Cards drawn from the Take Deck can be placed here.</li>
+        <li><strong>Trash Deck (Face Down):</strong> Used for discarded cards.</li>
+      </ul>
+    </section>
+
+    <!-- TURN STRUCTURE -->
+    <section class="rules-section">
+      <h2>Turn Structure</h2>
+      <ol>
+        <li>
+          <strong>Drawing a Card:</strong>  
+          Players must take a card from either the Open Deck (the face-up card) or the Take Deck (flip a new card into the Open Deck, then choose whether to take it or leave it).  
+          <em>Special Rule for Curses:</em> If a player flips their own Curse Card, they immediately discard it into the Trash Deck.
+        </li>
+        <li>
+          <strong>Managing Cards:</strong>  
+          - If the player takes a Special Card, they must place it in their Special Slot (discarding any previous Special Card).  
+          - Players cannot hold Special Cards in their hand.  
+          - If a player exceeds 5 cards in hand, they must discard a card before drawing.
+        </li>
+        <li>
+          <strong>Performing an Action (Choose 1):</strong>  
+          - Use a Special Card (from the Special Card Slot).  
+          - Place a Curse on a Player (only if that player has The Book of Spells on them).
+        </li>
+      </ol>
+    </section>
+
+    <!-- ELIMINATION RULES -->
+    <section class="rules-section">
+      <h2>Elimination Rules</h2>
+      <h3>How a Player Gets Eliminated</h3>
+      <ul>
+        <li>
+          <strong>Book of Spells Activation:</strong>  
+          If a player has The Book of Spells in their Curse Pile, their Curse is “activated,” allowing other players to add Curse Cards to their pile.
+        </li>
+        <li>
+          <strong>Reaching 3 Curse Cards:</strong>  
+          If a player accumulates 3 copies of their own Curse Card (including the original), they are eliminated.  
+          The Spell of Spells (Joker) can be used as the final Curse to complete an elimination.
+        </li>
+        <li>
+          <strong>Breaking Their Curse Rule:</strong>  
+          If a player fails to follow their Curse's restriction, the game pauses. Any player holding that Curse Card must place it on their Curse Pile. If no one has the card, it is fetched from the deck and placed on their pile. The deck is reshuffled, and the game resumes.
+        </li>
+      </ul>
+
+      <h3>What Happens When a Player is Eliminated?</h3>
+      <p>
+        The eliminated player’s Curse Cards are removed from the game. Their remaining cards are shuffled back into the central decks. The next turn goes to the player after the last one who played.
+      </p>
+    </section>
+
+    <!-- WINNING THE GAME -->
+    <section class="rules-section">
+      <h2>Winning the Game</h2>
+      <p>A player wins in one of two ways:</p>
+      <ol>
+        <li><strong>Collecting 4 Blessing Cards:</strong> If a player gathers 4 Blessings, they win immediately. The Spell of Spells (Joker) can replace a missing Blessing if activated in the Special Card Slot.</li>
+        <li><strong>Last Player Standing:</strong> If all other players are eliminated, the last survivor wins.</li>
+      </ol>
+    </section>
+
+    <!-- CARD TYPES & EXPLANATIONS -->
+    <section class="rules-section">
+      <h2>Card Types & Explanations</h2>
+      <p>
+        Gogomatic uses three main categories of cards:
+      </p>
+      <ul>
+        <li><strong>Curse Cards:</strong> The twisted limitations each player must follow.</li>
+        <li><strong>Blessing Cards:</strong> Collect 4 to win instantly.</li>
+        <li><strong>Special Cards:</strong> Game-changers that influence curses and blessings.</li>
+      </ul>
+    </section>
+
+    <!-- CURSE CARDS -->
+    <section class="rules-section">
+      <h2>Curse Cards (קללות)</h2>
+      <p>
+        Each player receives one Curse Card at the start and must obey its rule. If a player accumulates 3 copies of their own Curse Card (including the original), they’re eliminated.
+      </p>
+      <h3>List of Curses</h3>
+      <ul>
+        <li><strong>Weak Hand Curse:</strong> Must only use their non-dominant hand.</li>
+        <li><strong>Silent Curse:</strong> Cannot speak at all.</li>
+        <li><strong>Apology Curse:</strong> Must say "sorry" whenever a player is eliminated.</li>
+        <li><strong>Announcer Curse:</strong> Must announce when any action is taken (e.g., playing a Special Card).</li>
+        <li><strong>Avoid-the-Name Curse:</strong> Cannot say another player's name.</li>
+        <li><strong>Third-Person Curse:</strong> Must speak in the third person to anyone.</li>
+        <li><strong>Card Whisperer Curse:</strong> Must whisper for the entire game.</li>
+        <li><strong>Curse of Gogomatic:</strong> Must say "Gogomatic" before drawing a card.</li>
+        <li><strong>Compliment Curse:</strong> Must compliment someone whenever a player draws a card.</li>
+        <li><strong>Salute Curse:</strong> Must salute whenever a player is eliminated.</li>
+        <li><strong>Optimist Curse:</strong> Must always say something positive.</li>
+        <li><strong>Royal Curse:</strong> Must refer to themselves as a royal title (e.g., "His Majesty").</li>
+      </ul>
+    </section>
+
+    <!-- BLESSED CARDS -->
+    <section class="rules-section">
+      <h2>Blessed Cards (ברכות)</h2>
+      <p>
+        These are the path to victory—collect 4 to win immediately. 
+      </p>
+      <ul>
+        <li><strong>Blessing of Luck 🍀</strong></li>
+        <li><strong>Blessing of Strength 💪</strong></li>
+        <li><strong>Blessing of Protection 🛡️</strong></li>
+        <li><strong>Blessing of Wisdom 📜</strong></li>
+        <li><strong>Blessing of Time ⏳</strong></li>
+        <li><strong>Blessing of the Phoenix 🔥</strong></li>
+      </ul>
+    </section>
+
+    <!-- SPECIAL CARDS -->
+    <section class="rules-section">
+      <h2>Special Cards (קלפי קסם)</h2>
+      <p>
+        Special Cards introduce unique effects that can change the course of the game. 
+        Players can only activate these from their Special Card Slot, not directly from their hand.
+      </p>
+      <ul>
+        <li>
+          <strong>The Book of Spells (Ace):</strong> Activates a player's curse and makes them vulnerable to elimination. 
+          Once active, other players can place additional Curse Cards on them.
+        </li>
+        <li>
+          <strong>The Spellbreaker:</strong> Cancels and removes The Book of Spells. 
+          If a player has The Spellbreaker, they are no longer affected by their curse and cannot receive additional Curse Cards.
+        </li>
+        <li>
+          <strong>The Spell of Spells (Joker):</strong> A powerful wild card that can be used to complete a set of 4 Blessings 
+          or as the final Curse needed to eliminate a player.
+        </li>
+        <li>
+          <strong>Fortune Draw:</strong> The player draws 2 extra cards from the deck.
+        </li>
+      </ul>
+    </section>
+
+    <!-- CARD COUNT INFO -->
+    <section class="rules-section">
+      <h2>Card Counts</h2>
+      <ul>
+        <li>Book of Spell: 6</li>
+        <li>Spellbreaker: 2</li>
+        <li>Spell of Spells: 2</li>
+        <li>Fortune Draw: 2</li>
+        <li>6 Types of Blessings</li>
+        <li>6 Types of Curses</li>
+      </ul>
+    </section>
+
+    <!-- FINAL NOTES -->
+    <section class="rules-section">
+      <h2>Final Notes</h2>
+      <p>
+        Gogomatics is a mix of strategy, chaos, and luck. The key to success is managing your curse,
+        timing your actions, and forcing eliminations while aiming for victory. 
+        Are you ready to face the magic?
+      </p>
+    </section>
+
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Gogomati. All Rights Reserved.</p>
+  <!-- =========== FOOTER =========== -->
+  <footer class="rulebook-footer">
+    <p>&copy; 2025 Gogomatic. All Rights Reserved.</p>
   </footer>
 
-  <!-- Main JS -->
-  <script src="script.js"></script>
+  <!-- =========== RULEBOOK JS (OPTIONAL) =========== -->
+  <script>
+    // If you'd like to add collapsible sections or advanced interactivity, add JS here.
+  </script>
 </body>
 </html>
