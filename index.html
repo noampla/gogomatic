@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gogomati – Enter the Cursed Arena</title>
+  <!-- Orbitron for headers, Lato for body -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Optional Background Audio -->
+  <audio id="bg-audio" loop>
+    <source src="assets/audio/ambient-magic.mp3" type="audio/mpeg">
+    Your browser does not support audio.
+  </audio>
+
+  <!-- HEADER / HERO -->
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="glitch" data-text="Welcome to the Cursed Arena">Welcome to the Cursed Arena</h1>
+      <p>Step into the world of Gogomati—where curses bind and magic rules. Master the chaos to claim your destiny!</p>
+      <div class="hero-buttons">
+        <a href="rulebook.html" class="btn">See the Rules</a>
+        <a href="cardtypes.html" class="btn">Meet the Cards</a>
+        <a href="strategy.html" class="btn">Learn the Magic</a>
+      </div>
+      <button id="audio-toggle" class="btn audio-btn">Enable Audio</button>
+    </div>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Arena</a></li>
+      <li><a href="rulebook.html">Grimoire</a></li>
+      <li><a href="cardtypes.html">Collection</a></li>
+      <li><a href="strategy.html">Codex</a></li>
+    </ul>
+    <button id="dark-mode-toggle">Dark Mode</button>
+  </nav>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Gogomati. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

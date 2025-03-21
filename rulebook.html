@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gogomati – The Digital Grimoire</title>
+  <!-- Fonts (Orbitron for headers, Lato for body) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Lato:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Arena</a></li>
+      <li><a href="rulebook.html">Grimoire</a></li>
+      <li><a href="cardtypes.html">Collection</a></li>
+      <li><a href="strategy.html">Codex</a></li>
+    </ul>
+    <button id="dark-mode-toggle">Dark Mode</button>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="grimoire">
+    <!-- Intro Panel -->
+    <section class="intro-panel">
+      <h1>The Digital Grimoire</h1>
+      <p>Enter this holographic spellbook to learn the arcane rules that bind the game.</p>
+    </section>
+
+    <!-- Accordion Section -->
+    <section class="accordion">
+      <!-- Accordion Item 1 -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>Game Setup</span>
+          <span class="accordion-arrow">&#9656;</span>
+        </button>
+        <div class="accordion-content">
+          <p>
+            Remove all Special Cards. Each player receives one visible curse card.  
+            Remove duplicates of each player’s curse from the deck.  
+            Deal 5 cards to each player (or fewer if the deck is low).
+          </p>
+        </div>
+      </div>
+
+      <!-- Accordion Item 2 -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>Turn Mechanics</span>
+          <span class="accordion-arrow">&#9656;</span>
+        </button>
+        <div class="accordion-content">
+          <p>
+            On your turn, you must take a card from either the face‑up pile or the deck.  
+            If you don’t, you must play a Special Card (if available).  
+            Don’t exceed 5 cards in hand; discard extra cards face‑down.
+          </p>
+        </div>
+      </div>
+
+      <!-- Accordion Item 3 -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>Elimination</span>
+          <span class="accordion-arrow">&#9656;</span>
+        </button>
+        <div class="accordion-content">
+          <p>
+            Breaking your curse or drawing 3 extra copies of it from the deck results  
+            in elimination. Beware the cursed fate!
+          </p>
+        </div>
+      </div>
+
+      <!-- Accordion Item 4 -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>Victory Conditions</span>
+          <span class="accordion-arrow">&#9656;</span>
+        </button>
+        <div class="accordion-content">
+          <p>
+            Win by being the last player alive or by collecting four Blessing cards  
+            for an instant victory.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Gogomati. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Main JS -->
+  <script src="script.js"></script>
+</body>
+</html>
