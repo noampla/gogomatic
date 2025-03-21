@@ -10,7 +10,7 @@
     font-family: 'Orbitron', sans-serif;
     background: #0b0b0b;
     color: #eeeeee;
-    background: url("assets/images/gogomatic-bg1.jpeg") no-repeat center center fixed;
+    background: url("assets/images/gogomatic-bg1-small.jpg") no-repeat center center fixed;
     background-size: cover;
     position: relative;
   }
@@ -30,6 +30,7 @@
     background: rgba(0,0,0,0.8);
     padding: 10px 20px;
     text-align: center;
+    font-size: 14px;
   }
   
   .top-nav ul {
@@ -53,7 +54,6 @@
   .collection-hero {
     position: relative;
     height: 40vh;
-    background: url("assets/images/collection-bg.jpg") center center / cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;

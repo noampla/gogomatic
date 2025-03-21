@@ -10,7 +10,7 @@
     font-family: 'Orbitron', sans-serif;
     color: #e0e0e0;
     /* Fixed background that stays while scrolling, with partial transparency */
-    background: url("assets/images/gogomatic-bg1.jpeg") no-repeat center center fixed;
+    background: url("assets/images/gogomatic-bg1-small.jpg") no-repeat center center fixed;
     background-size: cover;
     position: relative;
   }
