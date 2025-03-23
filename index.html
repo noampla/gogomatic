@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gogomatic – Embrace the Chaos</title>
   <link rel="icon" type="image/x-icon" href="assets/images/gogomatic-logo.ico">
-
-  <!-- Orbitron font for all text -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
-  <!-- Main CSS -->
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
-
   <!-- ========== NAVIGATION ========== -->
   <nav class="top-nav">
     <ul>
@@ -26,31 +21,30 @@
 
   <!-- =========== HERO SECTION =========== -->
   <header class="hero-container">
+    <!-- A dark overlay for extra drama -->
+    <div class="hero-overlay"></div>
     <div class="hero-flex">
-      <!-- Deck back image on the side -->
       <div class="deck-back-container">
-        <img src="assets/images/gogomatic-logo-tiny.png" alt="Gogomatic Card Back" class="deck-back" />
+        <img src="assets/images/gogomatic-logo-tiny.png" alt="Gogomatic Card Back" class="deck-back">
       </div>
-
       <div class="hero-content">
-        <h1>GOGOMATIC</h1>
-        <p>
-          A chaotic card game of curses and cunning.  
-          Can your wits outlast the deck’s dark magic?
+        <h1 class="hero-title">GOGOMATIC</h1>
+        <p class="hero-subtitle">
+          A chaotic card game of curses and cunning. Can your wits outlast the deck’s dark magic?
         </p>
         <div class="hero-buttons">
-          <!-- Link to your store/cart page -->
-          <a href="#" class="btn primary-btn">Summon Your Deck</a>
+          <!-- Primary CTA triggers the modal for deck selection -->
+          <a href="#" class="btn primary-btn" id="openModal">Summon Your Deck</a>
           <a href="rulebook.html" class="btn secondary-btn">Learn the Curses</a>
         </div>
       </div>
     </div>
   </header>
+  
 
   <!-- =========== MAIN CONTENT =========== -->
   <main class="home-main">
-
-    <!-- INTRO (EMBRACE THE CHAOS) -->
+    <!-- Embrace the Chaos -->
     <section class="dark-box-section">
       <h2>Embrace the Chaos</h2>
       <p>
@@ -58,13 +52,11 @@
         Secure Blessings to claim an instant win, or curse your rivals 
         to knock them out of the game.
       </p>
-      <p>
-        Ready to gamble with fate?
-      </p>
+      <p>Ready to gamble with fate?</p>
       <a href="cardtypes.html" class="btn">Explore the Cards</a>
     </section>
 
-    <!-- FEATURES SECTION -->
+    <!-- Features Section -->
     <section class="dark-box-section features-section">
       <div class="feature">
         <h3>Curses in Play</h3>
@@ -88,14 +80,13 @@
       </div>
     </section>
 
-    <!-- CARD PREVIEW -->
+    <!-- Card Preview Section -->
     <section class="dark-box-section card-preview-section">
       <h2>See What's in the Deck</h2>
       <div class="card-preview-gallery">
-        <!-- Update image paths as needed -->
-        <img src="assets/images/curses/curse-silence.png" alt="Silence Curse" />
-        <img src="assets/images/blessings/bless-luck.png" alt="Luck Blessing" />
-        <img src="assets/images/specials/special-book-of-spell.png" alt="Book of Spell" />
+        <img src="assets/images/curses/curse-silence.png" alt="Silence Curse">
+        <img src="assets/images/blessings/bless-luck.png" alt="Luck Blessing">
+        <img src="assets/images/specials/special-book-of-spell.png" alt="Book of Spell">
       </div>
       <p>
         Each draw could be your salvation—or your downfall. Proceed wisely.
@@ -103,7 +94,7 @@
       <a href="cardtypes.html" class="btn">Full Collection</a>
     </section>
 
-    <!-- TESTIMONIALS -->
+    <!-- Testimonials Section -->
     <section class="dark-box-section testimonials-section">
       <h2>What Players Say</h2>
       <blockquote>
@@ -115,7 +106,6 @@
         <cite>– The Lucky Draw</cite>
       </blockquote>
     </section>
-
   </main>
 
   <!-- =========== FOOTER =========== -->
@@ -123,5 +113,87 @@
     <p>&copy; 2025 Gogomatic. All Rights Reserved.</p>
   </footer>
 
+  <!-- =========== MODAL FOR DECK SELECTION =========== -->
+  <div id="deckModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h2>Choose Your Deck</h2>
+      <div class="deck-options">
+        <div class="deck-card gogomatic">
+          <img src="assets/images/gogomatic-deck.png" alt="Gogomatic Deck">
+          <h3>Gogomatic</h3>
+          <p>6 curses deck – Perfect for a quick, chaotic game.</p>
+          <p class="price"></p>
+          <a href="https://wa.me/972545567213?text=I%20want%20to%20buy%20the%20Gogomatic%20deck" class="btn primary-btn">Buy Now</a>
+        </div>
+        <div class="deck-card gogomatic-plus">
+          <img src="assets/images/gogomatic-deck+.png" alt="Gogomatic+ Deck">
+          <h3>Gogomatic+</h3>
+          <p>12 curses deck – For the ultimate cursed experience.</p>
+          <p class="price"></p>
+          <a href="https://wa.me/972545567213?text=I%20want%20to%20buy%20the%20Gogomatic+%20deck" class="btn primary-btn">Buy Now</a>
+        </div>
+        
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+            // Price definitions
+            const price60USD = 18.99, price80USD = 24.99;
+            const price60ILS = 69, price80ILS = 90;
+            
+            const priceElementGogomatic = document.querySelector(".deck-card.gogomatic .price");
+            const priceElementGogomaticPlus = document.querySelector(".deck-card.gogomatic-plus .price");
+        
+            // Use an external geo API to determine the user's country
+            fetch("https://ipapi.co/json/")
+              .then(response => response.json())
+              .then(data => {
+                 if(data.country_code === "IL"){
+                   priceElementGogomatic.textContent = "₪" + price60ILS;
+                   priceElementGogomaticPlus.textContent = "₪" + price80ILS;
+                 } else {
+                   priceElementGogomatic.textContent = "$" + price60USD;
+                   priceElementGogomaticPlus.textContent = "$" + price80USD;
+                 }
+              })
+              .catch(error => {
+                 // Fallback to language-based detection if API fails
+                 const userLang = navigator.language || navigator.userLanguage;
+                 const isIsrael = userLang.toLowerCase().includes("he") || userLang.toLowerCase().includes("il");
+                 if(isIsrael) {
+                   priceElementGogomatic.textContent = "₪" + price60ILS;
+                   priceElementGogomaticPlus.textContent = "₪" + price80ILS;
+                 } else {
+                   priceElementGogomatic.textContent = "$" + price60USD;
+                   priceElementGogomaticPlus.textContent = "$" + price80USD;
+                 }
+              });
+          });
+        </script>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- =========== JAVASCRIPT FOR MODAL FUNCTIONALITY =========== -->
+  <script>
+    var modal = document.getElementById("deckModal");
+    var openModal = document.getElementById("openModal");
+    var closeButton = document.querySelector(".close-button");
+
+    openModal.addEventListener("click", function(e) {
+      e.preventDefault();
+      modal.style.display = "block";
+    });
+
+    closeButton.addEventListener("click", function() {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("click", function(e) {
+      if (e.target == modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>
