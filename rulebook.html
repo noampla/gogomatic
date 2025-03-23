@@ -4,6 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gogomatic – Rulebook</title>
+  <link rel="icon" type="image/x-icon" href="assets/images/gogomatic-logo.ico">
 
   <!-- Orbitron for all text -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
@@ -35,52 +36,72 @@
   <!-- =========== MAIN CONTENT =========== -->
   <main class="rulebook-main">
 
+    <!-- GAME TITLE & INTRO -->
+    <section class="rules-section">
+      <h2>🃏 Gogomatics – Game Rules & Card Explanations</h2>
+      <p>
+        Gogomatics is a chaotic, cursed card game where players must survive magical limitations, sabotage opponents, 
+        and attempt to win by either outlasting everyone or by gathering four special blessings. Each player starts 
+        with a curse, forcing them to follow absurd rules. Throughout the game, players draw from a deck containing 
+        Curses, Blessings, and Special Cards, using strategy and timing to eliminate rivals or secure victory.
+      </p>
+    </section>
+
     <!-- GAME OVERVIEW -->
     <section class="rules-section">
-      <h2>Game Overview</h2>
+      <h2>📜 Game Overview</h2>
       <p>
-        Gogomatics is a chaotic, cursed card game where players must survive magical limitations, sabotage opponents, and attempt to win by either outlasting everyone or gathering four special blessings. Each player starts with a curse, forcing them to follow absurd rules. Throughout the game, players draw from a deck containing Curses, Blessings, and Special Cards, using strategy and timing to eliminate rivals or secure victory.
+        This is a cursed card game at heart: each player begins with a specific Curse that warps their behavior. The 
+        game’s central conflict comes from activating these curses at key moments, trying to enforce them on others, 
+        and trying to avoid collecting multiple copies of your own Curse. Meanwhile, powerful Blessings can be collected 
+        to achieve an immediate win, and Special Cards can drastically alter the playing field. Strategy and timing are 
+        crucial: eliminate others or race to get those four blessings first!
       </p>
     </section>
 
     <!-- GAME SETUP -->
     <section class="rules-section">
-      <h2>Game Setup</h2>
+      <h2>🔄 Game Setup</h2>
+
       <h3>Choosing Curses</h3>
       <ul>
         <li>Before the game starts, players can either choose which curses are in play or randomly draw one from the full list.</li>
         <li>There must be the same number of curses in play as there are players.</li>
         <li>Each player randomly draws a Curse Card from the Curses Deck and places it face-up in front of them.</li>
       </ul>
-      <p>
-        <strong>Important:</strong> Any Curse Cards not chosen for the game are removed from the Main Game Deck.
-      </p>
 
       <h3>Deck Preparation</h3>
-      <ul>
-        <li>Remove from the Main Game Deck any Curse Cards that were not chosen for the game.</li>
-        <li>Shuffle the remaining deck.</li>
-      </ul>
+      <p>
+        After each player has randomly drawn a Curse Card, players must collectively decide whether to remove all unused 
+        curses from the main deck or leave them in. If removed, take them out before shuffling. If they are left in, 
+        place all unused Curse Cards face-up in a visible area for reference.
+      </p>
+      <p>
+        Whenever a player draws a card matching an unused curse, immediately discard it onto the corresponding pile and draw a replacement.
+      </p>
+      <p>
+        Once this step is complete, shuffle the remaining cards to form the main game deck.
+      </p>
 
       <h3>Starting Hand</h3>
       <ul>
         <li>Each player is dealt 3 cards from the Main Game Deck.</li>
         <li>If a player receives a Special Card, they must place one face-up in their Special Card Slot.</li>
         <li>A player can only hold 1 Special Card at a time—if they receive more than one, they must choose one to keep and discard the rest to the Trash Deck.</li>
+        <li>If any of the dealt cards are Curse Cards not in play, they are immediately removed, and a replacement card is drawn.</li>
       </ul>
 
       <h3>Deciding First Player</h3>
       <p>
-        Suggested method: Each player draws a card from the deck—whoever gets the highest number or a “magical” card (like a Blessing) goes first. Turns proceed clockwise.
+        After all players have received their Curse Cards and starting hands, the player with the highest Curse Strength 
+        (or any agreed-upon method, such as drawing for the highest value card) begins the game. Play proceeds in clockwise order.
       </p>
     </section>
 
     <!-- DECKS IN PLAY -->
     <section class="rules-section">
-      <h2>Decks in Play</h2>
-      <p>
-        Three central decks are placed in the middle:
-      </p>
+      <h2>🃏 Decks in Play</h2>
+      <p>Three central decks are placed in the middle:</p>
       <ul>
         <li><strong>Take Deck (Face Down):</strong> The main draw pile.</li>
         <li><strong>Open Deck (Face Up):</strong> Cards drawn from the Take Deck can be placed here.</li>
@@ -90,105 +111,131 @@
 
     <!-- TURN STRUCTURE -->
     <section class="rules-section">
-      <h2>Turn Structure</h2>
+      <h2>🔄 Turn Structure</h2>
       <ol>
         <li>
-          <strong>Drawing a Card:</strong>  
-          Players must take a card from either the Open Deck (the face-up card) or the Take Deck (flip a new card into the Open Deck, then choose whether to take it or leave it).  
-          <em>Special Rule for Curses:</em> If a player flips their own Curse Card, they immediately discard it into the Trash Deck.
+          <strong>Drawing a Card:</strong><br>
+          Players must take a card from one of two options:
+          <ul>
+            <li>From the Open Deck (take the face-up card).</li>
+            <li>From the Take Deck (flip a new card into the Open Deck, then choose whether to take it or leave it).</li>
+          </ul>
+          <em>Special Rule for Curses:</em> If a player flips their own Curse Card, they immediately discard it into the Trash Deck (an advantage, as it’s removed from the game).
         </li>
         <li>
-          <strong>Managing Cards:</strong>  
-          - If the player takes a Special Card, they must place it in their Special Slot (discarding any previous Special Card).  
-          - Players cannot hold Special Cards in their hand.  
-          - If a player exceeds 5 cards in hand, they must discard a card before drawing.
+          <strong>Managing Cards:</strong><br>
+          If a player encounters a Special Card, it must be placed immediately into their Special Card Slot.
+          <ul>
+            <li>A player may only have one Special Card in their slot at a time. If the slot is occupied, discard the current Special Card before placing the new one.</li>
+            <li>Special Cards may not be held in a player’s hand at any time.</li>
+            <li>If a player has more than five cards in hand, they must discard one card (face-down) before drawing a new card.</li>
+          </ul>
         </li>
         <li>
-          <strong>Performing an Action (Choose 1):</strong>  
-          - Use a Special Card (from the Special Card Slot).  
-          - Place a Curse on a Player (only if that player has The Book of Spells on them).
+          <strong>Performing an Action (Choose 1 Per Turn):</strong>
+          <ul>
+            <li><strong>Use a Special Card:</strong> Special Cards can only be activated from the Special Card Slot.</li>
+            <li><strong>Place a Curse on a Player:</strong> Players can place a Curse Card on another player’s Curse Pile, but only if that player has <em>The Book of Spells</em> on them.</li>
+          </ul>
         </li>
       </ol>
     </section>
 
     <!-- ELIMINATION RULES -->
     <section class="rules-section">
-      <h2>Elimination Rules</h2>
+      <h2>❌ Elimination Rules</h2>
       <h3>How a Player Gets Eliminated</h3>
       <ul>
         <li>
-          <strong>Book of Spells Activation:</strong>  
-          If a player has The Book of Spells in their Curse Pile, their Curse is “activated,” allowing other players to add Curse Cards to their pile.
+          <strong>Book of Spells Activation:</strong><br>
+          If a player has <em>The Book of Spells</em> in their Curse Pile, their curse is “activated,” allowing other players to add Curse Cards to their pile.
         </li>
         <li>
-          <strong>Reaching 3 Curse Cards:</strong>  
-          If a player accumulates 3 copies of their own Curse Card (including the original), they are eliminated.  
-          The Spell of Spells (Joker) can be used as the final Curse to complete an elimination.
+          <strong>Reaching 3 Curse Cards:</strong><br>
+          If a player accumulates 3 copies of their own Curse Card (including the original), they are eliminated.<br>
+          <em>The Spell of Spells (Joker)</em> can be used as the final Curse to complete an elimination.
         </li>
         <li>
-          <strong>Breaking Their Curse Rule:</strong>  
-          If a player fails to follow their Curse's restriction, the game pauses. Any player holding that Curse Card must place it on their Curse Pile. If no one has the card, it is fetched from the deck and placed on their pile. The deck is reshuffled, and the game resumes.
+          <strong>Breaking Their Curse Rule:</strong><br>
+          If a player fails to follow their Curse's restriction (e.g., the Silent player speaks), the game pauses. Any player holding that Curse Card must place it onto their Curse Pile. 
+          If no one has it, it is fetched from the deck and placed on their pile. The deck is then reshuffled, and the game resumes.
         </li>
       </ul>
 
       <h3>What Happens When a Player is Eliminated?</h3>
       <p>
-        The eliminated player’s Curse Cards are removed from the game. Their remaining cards are shuffled back into the central decks. The next turn goes to the player after the last one who played.
+        The eliminated player’s Curse Cards are removed from the game. Their remaining cards (Blessings, Special Cards, etc.) 
+        are shuffled back into the central decks. The next turn goes to the player after the last one who played.
       </p>
     </section>
 
     <!-- WINNING THE GAME -->
     <section class="rules-section">
-      <h2>Winning the Game</h2>
-      <p>A player wins in one of two ways:</p>
+      <h2>🏆 Winning the Game</h2>
+      <p>
+        A player wins in one of two ways:
+      </p>
       <ol>
-        <li><strong>Collecting 4 Blessing Cards:</strong> If a player gathers 4 Blessings, they win immediately. The Spell of Spells (Joker) can replace a missing Blessing if activated in the Special Card Slot.</li>
-        <li><strong>Last Player Standing:</strong> If all other players are eliminated, the last survivor wins.</li>
+        <li>
+          <strong>Collecting 4 Blessing Cards:</strong><br>
+          If a player gathers 4 Blessings, they win immediately. 
+          <em>The Spell of Spells (Joker)</em> can replace one missing Blessing if it is activated from the Special Card Slot.
+        </li>
+        <li>
+          <strong>Being the Last Player Standing:</strong><br>
+          If all other players are eliminated, the last surviving player wins.
+        </li>
       </ol>
     </section>
 
     <!-- CARD TYPES & EXPLANATIONS -->
     <section class="rules-section">
-      <h2>Card Types & Explanations</h2>
+      <h2>🎭 Card Types & Explanations</h2>
       <p>
-        Gogomatic uses three main categories of cards:
+        The game features three main categories of cards:
       </p>
       <ul>
-        <li><strong>Curse Cards:</strong> The twisted limitations each player must follow.</li>
-        <li><strong>Blessing Cards:</strong> Collect 4 to win instantly.</li>
-        <li><strong>Special Cards:</strong> Game-changers that influence curses and blessings.</li>
+        <li><strong>Curse Cards:</strong> The twisted limitations each player must follow. Having three of your own eliminates you.</li>
+        <li><strong>Blessing Cards:</strong> Collect four to achieve instant victory.</li>
+        <li><strong>Special Cards:</strong> Unique abilities that can drastically alter the game state (e.g., activating curses, removing them, drawing extra cards, etc.).</li>
       </ul>
     </section>
 
     <!-- CURSE CARDS -->
     <section class="rules-section">
-      <h2>Curse Cards (קללות)</h2>
+      <h2>🃏 Curse Cards</h2>
       <p>
-        Each player receives one Curse Card at the start and must obey its rule. If a player accumulates 3 copies of their own Curse Card (including the original), they’re eliminated.
+        At the start of the game, each player randomly draws one Curse Card, placing it face-up in front of them. Once 
+        a player’s curse is activated (via <em>The Book of Spells</em>), they must obey its rule or risk having an 
+        additional copy of that curse placed on them for any slip-up. Accumulating three total copies of your curse 
+        card eliminates you from the game.
       </p>
-      <h3>List of Curses</h3>
+
+      <h3>🛑 List of Curses</h3>
       <ul>
         <li><strong>Weak Hand Curse:</strong> Must only use their non-dominant hand.</li>
         <li><strong>Silent Curse:</strong> Cannot speak at all.</li>
         <li><strong>Apology Curse:</strong> Must say "sorry" whenever a player is eliminated.</li>
-        <li><strong>Announcer Curse:</strong> Must announce when any action is taken (e.g., playing a Special Card).</li>
+        <li><strong>Announcer Curse:</strong> Must announce when any action is taken, including playing a Special Card or placing a Curse.</li>
         <li><strong>Avoid-the-Name Curse:</strong> Cannot say another player's name.</li>
-        <li><strong>Third-Person Curse:</strong> Must speak in the third person to anyone.</li>
+        <li><strong>Third-Person Curse:</strong> Must speak in the third person at all times.</li>
         <li><strong>Card Whisperer Curse:</strong> Must whisper for the entire game.</li>
         <li><strong>Curse of Gogomatic:</strong> Must say "Gogomatic" before drawing a card.</li>
         <li><strong>Compliment Curse:</strong> Must compliment someone whenever a player draws a card.</li>
         <li><strong>Salute Curse:</strong> Must salute whenever a player is eliminated.</li>
-        <li><strong>Optimist Curse:</strong> Must always say something positive.</li>
-        <li><strong>Royal Curse:</strong> Must refer to themselves as a royal title (e.g., "His Majesty").</li>
+        <li><strong>Royal Curse:</strong> Must refer to themselves by a royal title (e.g., "His Majesty").</li>
+        <li><strong>High-Five Curse:</strong> Must offer a high-five to the previous player before starting their turn.</li>
       </ul>
     </section>
 
     <!-- BLESSED CARDS -->
     <section class="rules-section">
-      <h2>Blessed Cards (ברכות)</h2>
+      <h2>🌟 Blessed Cards</h2>
       <p>
-        These are the path to victory—collect 4 to win immediately. 
+        Blessed Cards represent rare boons. Collecting four immediately grants victory. 
+        <em>The Spell of Spells (Joker)</em> can substitute for one missing Blessing if placed in your Special Card Slot.
       </p>
+      <h3>List of Blessings</h3>
       <ul>
         <li><strong>Blessing of Luck 🍀</strong></li>
         <li><strong>Blessing of Strength 💪</strong></li>
@@ -201,38 +248,51 @@
 
     <!-- SPECIAL CARDS -->
     <section class="rules-section">
-      <h2>Special Cards (קלפי קסם)</h2>
+      <h2>✨ Special Cards</h2>
       <p>
-        Special Cards introduce unique effects that can change the course of the game. 
-        Players can only activate these from their Special Card Slot, not directly from their hand.
+        Special Cards are played from your Special Card Slot (never from your hand) and can drastically alter the game:
       </p>
       <ul>
         <li>
-          <strong>The Book of Spells (Ace):</strong> Activates a player's curse and makes them vulnerable to elimination. 
-          Once active, other players can place additional Curse Cards on them.
+          <strong>The Book of Spells (Ace):</strong><br>
+          Activates a player’s curse, making them vulnerable to receiving more copies of their Curse Card.
         </li>
         <li>
-          <strong>The Spellbreaker:</strong> Cancels and removes The Book of Spells. 
-          If a player has The Spellbreaker, they are no longer affected by their curse and cannot receive additional Curse Cards.
+          <strong>The Spellbreaker:</strong><br>
+          Cancels and removes <em>The Book of Spells</em>. A player with The Spellbreaker is not affected by their curse 
+          and cannot receive additional Curse Cards (unless The Book of Spells is reactivated later).
         </li>
         <li>
-          <strong>The Spell of Spells (Joker):</strong> A powerful wild card that can be used to complete a set of 4 Blessings 
-          or as the final Curse needed to eliminate a player.
+          <strong>The Spell of Spells (Joker):</strong><br>
+          A powerful wildcard that can do either of the following:
+          <ul>
+            <li>Act as the final Curse needed to eliminate a player who already has two copies of their Curse.</li>
+            <li>Substitute one missing Blessing to complete the set of four needed for an instant win (must be in the Special Card Slot).</li>
+          </ul>
         </li>
         <li>
-          <strong>Fortune Draw:</strong> The player draws 2 extra cards from the deck.
+          <strong>Fortune Draw:</strong><br>
+          The player immediately draws 2 extra cards from the deck.
+        </li>
+        <li>
+          <strong>Power Snatch:</strong><br>
+          Steals the Special Card from another player's Special Slot and places it into your own. The targeted player 
+          loses their Special Card entirely. You may use the stolen card in a future turn (it replaces Power Snatch in your slot).
         </li>
       </ul>
     </section>
 
-    <!-- CARD COUNT INFO -->
+    <!-- CARD COUNTS -->
     <section class="rules-section">
-      <h2>Card Counts</h2>
+      <h2>Cards</h2>
+      <p>
+        Below is a breakdown of how many copies exist for each type of key card:
+      </p>
       <ul>
-        <li>Book of Spell: 6</li>
-        <li>Spellbreaker: 2</li>
-        <li>Spell of Spells: 2</li>
-        <li>Fortune Draw: 2</li>
+        <li>Book of Spells – 6</li>
+        <li>Spellbreaker – 2</li>
+        <li>Spell of Spells – 2</li>
+        <li>Draw 2 Cards (Fortune Draw) – 2</li>
         <li>6 Types of Blessings</li>
         <li>6 Types of Curses</li>
       </ul>
@@ -240,14 +300,13 @@
 
     <!-- FINAL NOTES -->
     <section class="rules-section">
-      <h2>Final Notes</h2>
+      <h2>🔥 Final Notes</h2>
       <p>
-        Gogomatics is a mix of strategy, chaos, and luck. The key to success is managing your curse,
-        timing your actions, and forcing eliminations while aiming for victory. 
-        Are you ready to face the magic?
+        Gogomatics is a blend of strategy, chaos, and luck. The key to success is managing your curse, carefully timing 
+        the use of Special Cards, and knowing when to go for eliminations versus aiming for blessings. Enjoy the madness, 
+        and may Gogomatic fortune smile upon you!
       </p>
     </section>
-
   </main>
 
   <!-- =========== FOOTER =========== -->
