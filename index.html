@@ -7,6 +7,37 @@
   <link rel="icon" type="image/x-icon" href="assets/images/gogomatic-logo.ico">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="index.css">
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Price definitions
+      const price60USD = 18.99, price80USD = 24.99;
+      const price60ILS = 69, price80ILS = 90;
+      
+      const priceElementGogomatic = document.querySelector(".deck-card.gogomatic .price");
+      const priceElementGogomaticPlus = document.querySelector(".deck-card.gogomatic-plus .price");
+  
+      // Use an external geo API to determine the user's country
+      fetch("https://ipapi.co/json/")
+        .then(response => response.json())
+        .then(data => {
+           if(data.country_code === "IL"){
+            window.location.href = "index-heb.html"; 
+           } else {
+             
+           }
+        })
+        .catch(error => {
+           // Fallback to language-based detection if API fails
+           const userLang = navigator.language || navigator.userLanguage;
+           const isIsrael = userLang.toLowerCase().includes("he") || userLang.toLowerCase().includes("il");
+           if(isIsrael) {
+            window.location.href = "index-heb.html";
+           } else {
+             
+           }
+        });
+    });
+  </script>
 </head>
 <body>
   <!-- ========== NAVIGATION ========== -->
@@ -133,43 +164,6 @@
           <p class="price"></p>
           <a href="https://wa.me/972545567213?text=I%20want%20to%20buy%20the%20Gogomatic+%20deck" class="btn primary-btn">Buy Now</a>
         </div>
-        
-        <script>
-          document.addEventListener("DOMContentLoaded", function() {
-            // Price definitions
-            const price60USD = 18.99, price80USD = 24.99;
-            const price60ILS = 69, price80ILS = 90;
-            
-            const priceElementGogomatic = document.querySelector(".deck-card.gogomatic .price");
-            const priceElementGogomaticPlus = document.querySelector(".deck-card.gogomatic-plus .price");
-        
-            // Use an external geo API to determine the user's country
-            fetch("https://ipapi.co/json/")
-              .then(response => response.json())
-              .then(data => {
-                 if(data.country_code === "IL"){
-                   priceElementGogomatic.textContent = "₪" + price60ILS;
-                   priceElementGogomaticPlus.textContent = "₪" + price80ILS;
-                 } else {
-                   priceElementGogomatic.textContent = "$" + price60USD;
-                   priceElementGogomaticPlus.textContent = "$" + price80USD;
-                 }
-              })
-              .catch(error => {
-                 // Fallback to language-based detection if API fails
-                 const userLang = navigator.language || navigator.userLanguage;
-                 const isIsrael = userLang.toLowerCase().includes("he") || userLang.toLowerCase().includes("il");
-                 if(isIsrael) {
-                   priceElementGogomatic.textContent = "₪" + price60ILS;
-                   priceElementGogomaticPlus.textContent = "₪" + price80ILS;
-                 } else {
-                   priceElementGogomatic.textContent = "$" + price60USD;
-                   priceElementGogomaticPlus.textContent = "$" + price80USD;
-                 }
-              });
-          });
-        </script>
-        
       </div>
     </div>
   </div>

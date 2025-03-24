@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>גוגומטיק – שחררו את הכאוס</title>
+  <link rel="icon" type="image/x-icon" href="assets/images/gogomatic-logo.ico">
+
+  <!-- Rubik font (חינמי לגמרי) -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Main CSS - אפשר לאחד כאן או להפריד לקובץ נפרד -->
+  <style>
+    /* ========== RESET & BASE ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* שימוש בפונט Rubik */
+    body {
+      font-family: 'Rubik', sans-serif;
+      background: url("assets/images/gogomatic-bg1-small.jpg") no-repeat center center fixed;
+      background-size: cover;
+      /* כיווניות RTL */
+      direction: rtl;
+      /* טקסט ממוקם לימין כברירת מחדל */
+      text-align: right;
+
+      /* שכבת כהות רקע */
+      position: relative;
+      color: #e0e0e0;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.4);
+      z-index: -1;
+    }
+
+    /* ========== NAVIGATION ========== */
+    .top-nav {
+      background: rgba(0,0,0,0.8);
+      padding: 10px 20px;
+      text-align: center; /* אפשר לשנות ל-right או left לפי רצונכם */
+    }
+    .top-nav ul {
+      list-style: none;
+      display: inline-flex;
+      gap: 20px;
+    }
+    .top-nav ul li a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .top-nav ul li a.active,
+    .top-nav ul li a:hover {
+      color: #ffd700;
+    }
+
+    /* ========== HERO SECTION ========== */
+    .hero-container {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-flex {
+      display: flex;
+      align-items: center;
+      /* שימו לב: אם רוצים שהתמונה תהיה מימין והטקסט משמאל, אפשר להחליף:
+         flex-direction: row-reverse; */
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .deck-back-container {
+      flex-shrink: 0;
+      width: 150px; 
+    }
+    .deck-back {
+      width: 100%;
+      height: auto;
+      opacity: 0.9;
+      transition: opacity 0.3s;
+    }
+    .deck-back:hover {
+      opacity: 1;
+    }
+    .hero-content {
+      flex-grow: 1;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+      color: #ffd700;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px rgba(255,215,0,0.8);
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* ========== BUTTONS ========== */
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: #fff;
+      background: linear-gradient(135deg, #eb5e28, #f39c12);
+      box-shadow: 0 0 18px rgba(235, 94, 40, 0.6);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-decoration: none;
+      text-align: center; /* מתקן שבטקסט הכפתור יהיה ממורכז */
+    }
+    .btn:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 25px rgba(235, 94, 40, 0.9);
+    }
+    .primary-btn {
+      background: linear-gradient(135deg, #eb5e28, #ff7b42);
+      box-shadow: 0 0 18px rgba(235, 94, 40, 0.6);
+    }
+    .secondary-btn {
+      background: linear-gradient(135deg, #f39c12, #ffb24d);
+      box-shadow: 0 0 18px rgba(243, 156, 18, 0.6);
+    }
+
+    /* ========== MAIN CONTENT ========== */
+    .home-main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    /* Dark box sections */
+    .dark-box-section {
+      background: rgba(0,0,0,0.6);
+      padding: 20px;
+      border-right: 5px solid #eb5e28; /* שיניתי ל־border-right במקום left, כדי להתאים ל־RTL */
+      box-shadow: inset 0 0 10px #eb5e28;
+      margin-bottom: 40px;
+      /* כברירת מחדל הטקסט right עקב הגדרות body */
+    }
+    .dark-box-section h2 {
+      font-size: 1.8rem;
+      color: #ffd700;
+      margin-bottom: 15px;
+    }
+    .dark-box-section p {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    /* Features Section Layout */
+    .features-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+      gap: 20px;
+    }
+    .feature {
+      background: rgba(0,0,0,0.4);
+      padding: 15px;
+      border-radius: 5px;
+      border-right: 4px solid #f39c12; /* RTL */
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    }
+    .feature h3 {
+      color: #ffd700;
+      margin-bottom: 8px;
+      font-size: 1.2rem;
+    }
+
+    /* Card Preview */
+    .card-preview-section h2 {
+      margin-bottom: 15px;
+    }
+    .card-preview-gallery {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+    .card-preview-gallery img {
+      width: 100px;
+      height: auto;
+      border: 2px solid #444;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+      transition: transform 0.3s;
+    }
+    .card-preview-gallery img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Testimonials */
+    .testimonials-section blockquote {
+      background: rgba(0,0,0,0.3);
+      padding: 20px;
+      margin: 20px 0;
+      border-right: 5px solid #ffd700; /* RTL */
+      font-style: italic;
+      position: relative;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    }
+    .testimonials-section blockquote:before {
+      content: "“";
+      position: absolute;
+      right: 10px; /* RTL */
+      top: -5px;
+      font-size: 3rem;
+      color: #ffd700;
+      opacity: 0.6;
+    }
+    .testimonials-section blockquote:after {
+      content: "”";
+      position: absolute;
+      left: 10px; /* RTL הפוך */
+      bottom: -5px;
+      font-size: 3rem;
+      color: #ffd700;
+      opacity: 0.6;
+    }
+    .testimonials-section cite {
+      display: block;
+      margin-top: 10px;
+      font-style: normal;
+      color: #ddd;
+      font-size: 0.9rem;
+    }
+
+    /* Pricing Section */
+    .pricing-section .deck-offers {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .deck-offer {
+      background: rgba(0,0,0,0.4);
+      padding: 20px;
+      border-radius: 8px;
+      border-right: 4px solid #f39c12; /* RTL */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+      max-width: 300px;
+      flex: 1;
+      min-width: 250px;
+      text-align: center;
+    }
+    .deck-offer h3 {
+      color: #ffd700;
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+    }
+    .deck-offer ul {
+      list-style: none;
+      margin: 10px 0;
+      padding: 0;
+      text-align: right; /* בד"כ ב־RTL נשים right */
+    }
+    .deck-offer ul li {
+      margin-bottom: 5px;
+    }
+    .deck-offer .price {
+      font-size: 1.5rem;
+      margin: 15px 0;
+      color: #eb5e28;
+    }
+    .deck-offer.plus {
+      border-color: #eb3e28;
+      box-shadow: 0 4px 12px rgba(235,62,40,0.7);
+    }
+
+    /* ========== FOOTER ========== */
+    .home-footer {
+      background: rgba(0,0,0,0.8);
+      text-align: center;
+      padding: 20px;
+      color: #999;
+      font-size: 0.9rem;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ========== ניווט עליון ========== -->
+  <nav class="top-nav">
+    <ul>
+      <li><a href="heb-index.html" class="active">דף הבית</a></li>
+      <li><a href="rulebook.html">החוקים</a></li>
+      <li><a href="cardtypes.html">הקלפים</a></li>
+      <li><a href="strategy.html">אסטרטגיה</a></li>
+    </ul>
+  </nav>
+
+  <!-- =========== אזור HERO (ראש העמוד) =========== -->
+  <header class="hero-container">
+    <div class="hero-flex">
+      <!-- תמונת גב הקלף בצד -->
+      <div class="deck-back-container">
+        <img src="assets/images/gogomatic-logo-tiny.png"
+             alt="גב קלף גוגומטיק"
+             class="deck-back" />
+      </div>
+
+      <div class="hero-content">
+        <h1>גוגומטיק</h1>
+        <p>
+          משחק הקלפים הכאוטי והמפתיע שישנה את כל מה שחשבתם על ערב חברים.  
+          שלפו קלפים, העמיסו קללות על היריבים ותתכוננו לפיצוץ של צחוק והפתעות!
+        </p>
+        <div class="hero-buttons">
+          <!-- קישור ישיר למקטע התמחור/רכישה -->
+          <a href="#pricing" class="btn primary-btn">בחרו את החבילה שלכם</a>
+          <!-- קישור משני לדף החוקים -->
+          <a href="rulebook.html" class="btn secondary-btn">עוד על המשחק</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========== תוכן עיקרי =========== -->
+  <main class="home-main">
+
+    <!-- מקטע תמחור ורכישה -->
+    <section id="pricing" class="dark-box-section pricing-section">
+      <h2>איזו רמה של טירוף תבחרו?</h2>
+      <p>גוגומטיק מגיע בשתי גרסאות טעונות אדרנלין. אתם מחליטים כמה רחוק תלכו.</p>
+
+      <div class="deck-offers">
+        <!-- גוגומטיק רגיל -->
+        <div class="deck-offer">
+          <h3>גוגומטיק</h3>
+          <ul>
+            <li>6 קללות פרועות</li>
+            <li>כל הברכות הקלאסיות</li>
+            <li>קלפי כוח בסיסיים להתנעה</li>
+            <li>מתאים ל-1–6 שחקנים</li>
+          </ul>
+          <p class="price">₪60</p>
+          <a href="https://wa.me/972545567213?text=אני%20רוצה%20את%20חבילת%20גוגומטיק%20הרגילה!"
+             class="btn primary-btn">
+            מזמינים עכשיו
+          </a>
+        </div>
+
+        <!-- גוגומטיק+ -->
+        <div class="deck-offer plus">
+          <h3>גוגומטיק+</h3>
+          <ul>
+            <li>12 קללות מטורפות במיוחד</li>
+            <li>כל הברכות + הרחבות נדירות</li>
+            <li>כפול כאוס וכפול סיכונים</li>
+            <li>מתאים ל-1–12 שחקנים</li>
+          </ul>
+          <p class="price">₪90</p>
+          <a href="https://wa.me/972545567213?text=אני%20רוצה%20את%20חבילת%20גוגומטיק+%20המורחבת!"
+             class="btn primary-btn">
+            רוצים את הטירוף+
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- מקטע הקדמה: “אמצו את הכאוס” -->
+    <section class="dark-box-section">
+      <h2>אמצו את הכאוס</h2>
+      <p>
+        ברגע שהקלפים נפתחים – הכול אפשרי! ברכות יכולות להפוך ניצחון למיידי,  
+        בעוד קללות טורפות את הקלפים ומשגרות את היריבים למפלה.
+      </p>
+      <p> 
+        מוכנים להסתכן ולהפוך לאגדת גוגומטיק?
+      </p>
+      <a href="cardtypes.html" class="btn">כל סוגי הקלפים</a>
+    </section>
+
+    <!-- מקטע פיצ׳רים -->
+    <section class="dark-box-section features-section">
+      <div class="feature">
+        <h3>קללות בלתי צפויות</h3>
+        <p>
+          כל שחקן פותח עם קללה ייחודית – מפעולות מביכות ועד חוקים מוזרים.  
+          הטעות הכי קטנה עלולה להקפיץ קללה נוספת שתפיל אתכם לקרשים.
+        </p>
+      </div>
+      <div class="feature">
+        <h3>ברכות עם כוחות</h3>
+        <p>
+          השיגו 4 ברכות ותוכלו לסיים את המשחק בניצחון סוחף! רק היזהרו,  
+          כי המתחרים לא יתנו לכם להשיג אותן בקלות.
+        </p>
+      </div>
+      <div class="feature">
+        <h3>קלפי כוח משני-מציאות</h3>
+        <p>
+          ספר הלחשים מפעיל את הקללות של היריבים,  
+          שובר הלחשים מציל אתכם מכל קללה,  
+          ועוד קלפים סודיים שמשנים את מאזן הכוחות בכל רגע.
+        </p>
+      </div>
+    </section>
+
+    <!-- מקטע “טעימה מהחבילה” -->
+    <section class="dark-box-section card-preview-section">
+      <h2>טעימה מהחבילה</h2>
+      <div class="card-preview-gallery">
+        <img src="assets/images/curses/curse-silence.png" alt="קללת שתיקה" />
+        <img src="assets/images/blessings/bless-luck.png" alt="ברכת מזל" />
+        <img src="assets/images/specials/special-book-of-spell.png" alt="ספר הלחשים" />
+      </div>
+      <p>
+        בכל שליפה מחכה לכם הזדמנות נדירה – או מקלחת של צרות. האם תיקחו את הסיכון?
+      </p>
+      <a href="cardtypes.html" class="btn">ראו את הכל</a>
+    </section>
+
+    <!-- מקטע המלצות/עדויות -->
+    <section class="dark-box-section testimonials-section">
+      <h2>מה שחקנים מספרים</h2>
+      <blockquote>
+        "לילה אחד של גוגומטיק הרגיש כמו שבוע של צחוק וכאוס. אף פעם לא ראיתי משחק כל כך סוער ומהנה!"
+        <cite>– שחקנ/ית שהעז/ה</cite>
+      </blockquote>
+      <blockquote>
+        "החוקים קלים ללמידה, אבל אין סוף לאפשרויות! כל מפגש הופך למסיבה היסטרית של תרגילים מלוכלכים וקללות מפתיעות."
+        <cite>– המזל הנצחי</cite>
+      </blockquote>
+    </section>
+  </main>
+
+  <!-- =========== כותרת תחתונה =========== -->
+  <footer class="home-footer">
+    <p>&copy; 2025 גוגומטיק. כל הזכויות שמורות.</p>
+  </footer>
+
+</body>
+</html>
