@@ -296,7 +296,9 @@
       color: #999;
       font-size: 0.9rem;
     }
-
+    .deck-offer-image img {
+      height: 150px;
+    }
   </style>
 </head>
 
@@ -345,10 +347,16 @@
     <section id="pricing" class="dark-box-section pricing-section">
       <h2>איזו רמה של טירוף תבחרו?</h2>
       <p>גוגומטיק מגיע בשתי גרסאות טעונות אדרנלין. אתם מחליטים כמה רחוק תלכו.</p>
-
+    
       <div class="deck-offers">
         <!-- גוגומטיק רגיל -->
         <div class="deck-offer">
+          <!-- תמונה של החבילה הרגילה -->
+          <div class="deck-offer-image">
+            <img src="assets/images/gogomatic-deck.png" 
+                 alt="חבילת גוגומטיק רגילה">
+          </div>
+    
           <h3>גוגומטיק</h3>
           <ul>
             <li>6 קללות פרועות</li>
@@ -356,15 +364,21 @@
             <li>קלפי כוח בסיסיים להתנעה</li>
             <li>מתאים ל-1–6 שחקנים</li>
           </ul>
-          <p class="price">₪60</p>
+          <p class="price">₪69</p>
           <a href="https://wa.me/972545567213?text=אני%20רוצה%20את%20חבילת%20גוגומטיק%20הרגילה!"
              class="btn primary-btn">
             מזמינים עכשיו
           </a>
         </div>
-
+    
         <!-- גוגומטיק+ -->
         <div class="deck-offer plus">
+          <!-- תמונה של החבילה המורחבת -->
+          <div class="deck-offer-image">
+            <img src="assets/images/gogomatic-deck+.png" 
+                 alt="חבילת גוגומטיק פלוס מורחבת">
+          </div>
+    
           <h3>גוגומטיק+</h3>
           <ul>
             <li>12 קללות מטורפות במיוחד</li>
@@ -380,6 +394,7 @@
         </div>
       </div>
     </section>
+    
 
     <!-- מקטע הקדמה: “אמצו את הכאוס” -->
     <section class="dark-box-section">
