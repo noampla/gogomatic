@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>גוגומטיק – הקלפים</title>
+  <link rel="icon" type="image/x-icon" href="assets/images/gogomatic-logo.ico">
+
+  <!-- Orbitron (או כל פונט אחר שתרצו) -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS ייעודי לעמוד הקלפים (ניתן להתאים לשם אחר) -->
+  <link rel="stylesheet" href="cardtypes.css">
+</head>
+<body>
+
+  <!-- ========== תפריט ניווט עליון ========== -->
+  <nav class="top-nav">
+    <ul>
+      <li><a href="index-heb.html">דף הבית</a></li>
+      <li><a href="rulebook-heb.html">החוקים</a></li>
+      <li><a href="cardtypes-heb.html" class="active">הקלפים</a></li>
+      <li><a href="strategy-heb.html">אסטרטגיה</a></li>
+    </ul>
+  </nav>
+
+  <!-- ========== אזור HERO ========== -->
+  <header class="collection-hero">
+    <div class="collection-overlay"></div>
+    
+    <!-- מעטפת Flex ליישור קלף ותוכן -->
+    <div class="collection-flex">
+      <div class="card-back-container">
+        <img src="assets/images/gogomatic-logo-tiny.png" 
+             alt="גב קלף גוגומטיק" 
+             class="card-back" />
+      </div>
+  
+      <div class="collection-content">
+        <h1>אוסף הקלפים של גוגומטיק</h1>
+        <p>גלו את הקללות, הברכות וקלפי הכוח שישנו את הגורל שלכם.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== התוכן הראשי ========== -->
+  <main class="collection-main">
+
+    <!-- קללות -->
+    <section class="cards-section">
+      <h2>קללות</h2>
+      <p class="section-desc">
+        בתחילת המשחק, כל שחקן מקבל קללה אחת המשנה את ההתנהגות שלו או מגבילה אותו.  
+        הפרו בטעות את כללי הקללה – והיא עוד תחזור לנשוך אתכם.
+      </p>
+      <div class="card-gallery">
+
+        <div class="card-item">
+          <img src="assets/images/curses/curse-hand.png" alt="קללת היד החלשה">
+          <h3>קללת היד החלשה</h3>
+          <p>חייבים לשחק ביד הלא-דומיננטית שלכם.</p>
+        </div>
+        <div class="card-item">
+          <img src="assets/images/curses/curse-silence.png" alt="קללת השתיקה">
+          <h3>קללת השתיקה</h3>
+          <p>אסור לדבר בכלל.</p>
+        </div>
+        <div class="card-item">
+          <img src="assets/images/curses/curse-apology.png" alt="קללת ההתנצלות">
+          <h3>קללת ההתנצלות</h3>
+          <p>חייבים לומר "סליחה" בכל פעם ששחקן מודח.</p>
+        </div>
+        <div class="card-item">
+          <img src="assets/images/curses/curse-announcer.png" alt="קללת הכרוז">
+          <h3>קללת הכרוז</h3>
+          <p>חייבים להכריז על כל פעולה שקורית, כולל שימוש בקלף כוח או הצבת קללה.</p>
+        </div>
+        <div class="card-item">
+          <img src="assets/images/curses/curse-names.png" alt="קללת הימנעות משמות">
+          <h3>קללת הימנעות משמות</h3>
+          <p>אסור לומר את שמו של שחקן אחר.</p>
+        </div>
+        <div class="card-item">
+          <img src="assets/images/curses/curse-third-person.png" alt="קללת גוף שלישי">
+          <h3>קללת גוף שלישי</h3>
+          <p>חייבים לדבר על עצמכם בגוף שלישי.</p>
+        </div>
+        <div class="card-item">
+          <img src="assets/images/curses/curse-whisper.png" alt="קללת הלחישה">
+          <h3>קללת הלחישה</h3>
+          <p>כל המשחק, רק בלחישות.</p>
+        </div>
+        <div class="card-item">
+          <img src="assets/images/curses/curse-gogomatic.png" alt="קללת גוגומטיק">
+          <h3>קללת גוגומטיק</h3>
+          <p>חייבים לומר "גוגומטיק" לפני כל שליפה מהחפיסה.</p>
+        </div>
+        <div class="card-item">
+          <img src="assets/images/curses/curse-compliment.png" alt="קללת המחמאה">
+          <h3>קללת המחמאה</h3>
+          <p>חייבים להחמיא למישהו בכל פעם שנשלף קלף.</p>
+        </div>
+        <div class="card-item">
+          <img src="assets/images/curses/curse-sallute.png" alt="קללת הצדעה">
+          <h3>קללת הצדעה</h3>
+          <p>חייבים להצדיע בכל פעם ששחקן מודח.</p>
+        </div>
+        <div class="card-item">
+          <img src="assets/images/curses/curse-royal.png" alt="קללת המלכות">
+          <h3>קללת המלכות</h3>
+          <p>חייבים להתייחס לעצמכם כתואר מלכותי, לדוגמה "הוד רוממותי".</p>
+        </div>
+        <div class="card-item">
+          <img src="assets/images/curses/curse-highfive.png" alt="קללת היי-פייב">
+          <h3>קללת היי-פייב</h3>
+          <p>לפני תורכם, הציעו "היי-פייב" לשחקן הקודם—גם אם הוא מסרב.</p>
+        </div>        
+
+      </div>      
+    </section>
+
+    <!-- ברכות -->
+    <section class="cards-section">
+      <h2>ברכות</h2>
+      <p class="section-desc">
+        אספו ארבע ברכות כדי לנצח מיד. כל ברכה מוסיפה תקווה בעולם שמלא בקללות קטלניות.
+      </p>
+      <div class="card-gallery">
+
+        <div class="card-item">
+          <img src="assets/images/blessings/bless-luck.png" alt="ברכת מזל">
+          <h3>ברכת מזל</h3>
+          <p>המזל מיישר קו עם השליפות שלכם.</p>
+        </div>
+        <div class="card-item">
+          <img src="assets/images/blessings/bless-strength.png" alt="ברכת הכוח">
+          <h3>ברכת הכוח</h3>
+          <p>מעניקה עוצמה וכוח מתפרץ ליד שלכם.</p>
+        </div>
+        <div class="card-item">
+          <img src="assets/images/blessings/bless-protaction.png" alt="ברכת ההגנה">
+          <h3>ברכת ההגנה</h3>
+          <p>יוצרת מגן מפני אסונות מתקרבים.</p>
+        </div>
+        <div class="card-item">
+          <img src="assets/images/blessings/bless-wisdom.png" alt="ברכת החוכמה">
+          <h3>ברכת החוכמה</h3>
+          <p>מעצימה את התכנון והאסטרטגיה שלכם.</p>
+        </div>
+        <div class="card-item">
+          <img src="assets/images/blessings/bless-time.png" alt="ברכת הזמן">
+          <h3>ברכת הזמן</h3>
+          <p>מסייעת לכם לשלוט במשחק ולתזמן מהלכים.</p>
+        </div>
+        <div class="card-item">
+          <img src="assets/images/blessings/bless-phoenix.png" alt="ברכת הפניקס">
+          <h3>ברכת הפניקס</h3>
+          <p>אש התחדשות לעלייה מהאפר.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- קלפי כוח -->
+    <section class="cards-section">
+      <h2>קלפי כוח</h2>
+      <p class="section-desc">
+        מהפכים שיכולים להכריע את גורל היריבים שלכם או להציל אתכם ברגע האחרון.
+      </p>
+      <div class="card-gallery">
+        <div class="card-item">
+          <img src="assets/images/specials/special-book-of-spell.png" alt="ספר הלחשים">
+          <h3>ספר הלחשים</h3>
+          <p>מפעיל את הקללה של שחקן אחר ופותח אותו לתקיפה נוספת.</p>
+        </div>
+        <div class="card-item">
+          <img src="assets/images/specials/special-spellbreaker.png" alt="שובר הלחשים">
+          <h3>שובר הלחשים</h3>
+          <p>מבטל את ספר הלחשים במהירות קסומה.</p>
+        </div>
+        <div class="card-item">
+          <img src="assets/images/specials/special-spell-of-spell.png" alt="קלף הג'וקר (Spell of Spells)">
+          <h3>קלף הג'וקר (Spell of Spells)</h3>
+          <p>קלף "ויילד": משלים ברכות או משלים סט קללות לגמר.</p>
+        </div>
+        <div class="card-item">
+          <img src="assets/images/specials/special-fortune-draw.png" alt="משיכת מזל (Fortune Draw)">
+          <h3>משיכת מזל</h3>
+          <p>משכו 2 קלפים נוספים ברגע קריטי.</p>
+        </div>
+        <div class="card-item">
+          <img src="assets/images/specials/special-steal.png" alt="גניבת כוח (Power Snatch)">
+          <h3>גניבת כוח (Power Snatch)</h3>
+          <p>גונבים את קלף הכוח של יריב ומעבירים אותו לחריץ שלכם.</p>
+        </div>        
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="collection-footer">
+    <p>&copy; 2025 גוגומטיק. כל הזכויות שמורות.</p>
+  </footer>
+
+</body>
+</html>
