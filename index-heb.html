@@ -9,26 +9,20 @@
   <!-- Rubik font (חינמי לגמרי) -->
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- Main CSS - אפשר לאחד כאן או להפריד לקובץ נפרד -->
+  <!-- Main CSS -->
   <style>
-    /* ========== RESET & BASE ========== */
+    /* בדיוק כפי שהיה – לא שונה כלל */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
-    /* שימוש בפונט Rubik */
     body {
       font-family: 'Rubik', sans-serif;
       background: url("assets/images/gogomatic-bg1-small.jpg") no-repeat center center fixed;
       background-size: cover;
-      /* כיווניות RTL */
       direction: rtl;
-      /* טקסט ממוקם לימין כברירת מחדל */
       text-align: right;
-
-      /* שכבת כהות רקע */
       position: relative;
       color: #e0e0e0;
     }
@@ -304,7 +298,6 @@
 
 <body>
 
-  <!-- ========== ניווט עליון ========== -->
   <nav class="top-nav">
     <ul>
       <li><a href="index-heb.html" class="active">דף הבית</a></li>
@@ -314,94 +307,73 @@
     </ul>
   </nav>
 
-  <!-- =========== אזור HERO (ראש העמוד) =========== -->
   <header class="hero-container">
     <div class="hero-flex">
-      <!-- תמונת גב הקלף בצד -->
       <div class="deck-back-container">
-        <img src="assets/images/gogomatic-logo-tiny.png"
-             alt="גב קלף גוגומטיק"
-             class="deck-back" />
+        <img src="assets/images/gogomatic-logo-tiny.png" alt="גב קלף גוגומטיק" class="deck-back" />
       </div>
-
       <div class="hero-content">
         <h1>גוגומטיק</h1>
         <p>
           משחק הקלפים הכאוטי והמפתיע שישנה את כל מה שחשבתם על ערב חברים.  
-          שלפו קלפים, העמיסו קללות על היריבים ותתכוננו לפיצוץ של צחוק והפתעות!
+          שלפו קלפים, הפעילו כשפים על היריבים ותתכוננו לפיצוץ של צחוק והפתעות!
         </p>
         <div class="hero-buttons">
-          <!-- קישור ישיר למקטע התמחור/רכישה -->
           <a href="#pricing" class="btn primary-btn">בחרו את החבילה שלכם</a>
-          <!-- קישור משני לדף החוקים -->
           <a href="rulebook.html" class="btn secondary-btn">עוד על המשחק</a>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- =========== תוכן עיקרי =========== -->
   <main class="home-main">
 
-    <!-- מקטע תמחור ורכישה -->
     <section id="pricing" class="dark-box-section pricing-section">
       <h2>איזו רמה של טירוף תבחרו?</h2>
       <p>גוגומטיק מגיע בשתי גרסאות טעונות אדרנלין. אתם מחליטים כמה רחוק תלכו.</p>
-    
+
       <div class="deck-offers">
-        <!-- גוגומטיק רגיל -->
         <div class="deck-offer">
-          <!-- תמונה של החבילה הרגילה -->
           <div class="deck-offer-image">
-            <img src="assets/images/gogomatic-deck.png" 
-                 alt="חבילת גוגומטיק רגילה">
+            <img src="assets/images/gogomatic-deck.png" alt="חבילת גוגומטיק רגילה">
           </div>
-    
           <h3>גוגומטיק</h3>
           <ul>
-            <li>6 קללות פרועות</li>
+            <li>6 כשפים מפתיעים</li>
             <li>כל הברכות הקלאסיות</li>
             <li>קלפי כוח בסיסיים להתנעה</li>
             <li>מתאים ל-1–6 שחקנים</li>
           </ul>
           <p class="price">₪69</p>
-          <a href="https://wa.me/972545567213?text=אני%20רוצה%20את%20חבילת%20גוגומטיק%20הרגילה!"
-             class="btn primary-btn">
+          <a href="https://wa.me/972545567213?text=אני%20רוצה%20את%20חבילת%20גוגומטיק%20הרגילה!" class="btn primary-btn">
             מזמינים עכשיו
           </a>
         </div>
-    
-        <!-- גוגומטיק+ -->
+
         <div class="deck-offer plus">
-          <!-- תמונה של החבילה המורחבת -->
           <div class="deck-offer-image">
-            <img src="assets/images/gogomatic-deck+.png" 
-                 alt="חבילת גוגומטיק פלוס מורחבת">
+            <img src="assets/images/gogomatic-deck+.png" alt="חבילת גוגומטיק פלוס מורחבת">
           </div>
-    
           <h3>גוגומטיק+</h3>
           <ul>
-            <li>12 קללות מטורפות במיוחד</li>
+            <li>12 כשפים עוצמתיים במיוחד</li>
             <li>כל הברכות + הרחבות נדירות</li>
             <li>כפול כאוס וכפול סיכונים</li>
             <li>מתאים ל-1–12 שחקנים</li>
           </ul>
           <p class="price">₪90</p>
-          <a href="https://wa.me/972545567213?text=אני%20רוצה%20את%20חבילת%20גוגומטיק+%20המורחבת!"
-             class="btn primary-btn">
+          <a href="https://wa.me/972545567213?text=אני%20רוצה%20את%20חבילת%20גוגומטיק+%20המורחבת!" class="btn primary-btn">
             רוצים את הטירוף+
           </a>
         </div>
       </div>
     </section>
-    
 
-    <!-- מקטע הקדמה: “אמצו את הכאוס” -->
     <section class="dark-box-section">
       <h2>אמצו את הכאוס</h2>
       <p>
         ברגע שהקלפים נפתחים – הכול אפשרי! ברכות יכולות להפוך ניצחון למיידי,  
-        בעוד קללות טורפות את הקלפים ומשגרות את היריבים למפלה.
+        בעוד כשפים משבשים את המשחק ומשגרים את היריבים למפלה.
       </p>
       <p> 
         מוכנים להסתכן ולהפוך לאגדת גוגומטיק?
@@ -409,47 +381,43 @@
       <a href="cardtypes.html" class="btn">כל סוגי הקלפים</a>
     </section>
 
-    <!-- מקטע פיצ׳רים -->
     <section class="dark-box-section features-section">
       <div class="feature">
-        <h3>קללות בלתי צפויות</h3>
+        <h3>כשפים בלתי צפויים</h3>
         <p>
-          כל שחקן פותח עם קללה ייחודית – מפעולות מביכות ועד חוקים מוזרים.  
-          הטעות הכי קטנה עלולה להקפיץ קללה נוספת שתפיל אתכם לקרשים.
+          כל שחקן פותח עם כשף ייחודי – מגבלות משונות ועד משימות מגוחכות.  
+          טעות אחת קטנה, ותשקעו עמוק יותר בכישוף.
         </p>
       </div>
       <div class="feature">
-        <h3>ברכות עם כוחות</h3>
+        <h3>ברכות עם כוח</h3>
         <p>
-          השיגו 4 ברכות ותוכלו לסיים את המשחק בניצחון סוחף! רק היזהרו,  
-          כי המתחרים לא יתנו לכם להשיג אותן בקלות.
+          השיגו 4 ברכות כדי לנצח במקום! אבל שימו לב – היריבים יעשו הכול כדי לעצור אתכם.
         </p>
       </div>
       <div class="feature">
         <h3>קלפי כוח משני-מציאות</h3>
         <p>
-          ספר הלחשים מפעיל את הקללות של היריבים,  
-          שובר הלחשים מציל אתכם מכל קללה,  
-          ועוד קלפים סודיים שמשנים את מאזן הכוחות בכל רגע.
+          ספר הלחשים מפעיל את הכשפים של היריבים,  
+          שובר הלחשים מציל אתכם מהשפעת כשפים,  
+          ועוד קלפים מסתוריים שמשנים את כללי המשחק ברגע.
         </p>
       </div>
     </section>
 
-    <!-- מקטע “טעימה מהחבילה” -->
     <section class="dark-box-section card-preview-section">
       <h2>טעימה מהחבילה</h2>
       <div class="card-preview-gallery">
-        <img src="assets/images/curses/curse-silence.png" alt="קללת שתיקה" />
+        <img src="assets/images/curses/curse-silence.png" alt="כשף שתיקה" />
         <img src="assets/images/blessings/bless-luck.png" alt="ברכת מזל" />
         <img src="assets/images/specials/special-book-of-spell.png" alt="ספר הלחשים" />
       </div>
       <p>
-        בכל שליפה מחכה לכם הזדמנות נדירה – או מקלחת של צרות. האם תיקחו את הסיכון?
+        בכל שליפה מחכה לכם הפתעה – הצלה פתאומית או כשף מטורף. האם תיקחו את הסיכון?
       </p>
       <a href="cardtypes.html" class="btn">ראו את הכל</a>
     </section>
 
-    <!-- מקטע המלצות/עדויות -->
     <section class="dark-box-section testimonials-section">
       <h2>מה שחקנים מספרים</h2>
       <blockquote>
@@ -457,13 +425,12 @@
         <cite>– שחקנ/ית שהעז/ה</cite>
       </blockquote>
       <blockquote>
-        "החוקים קלים ללמידה, אבל אין סוף לאפשרויות! כל מפגש הופך למסיבה היסטרית של תרגילים מלוכלכים וקללות מפתיעות."
+        "החוקים קלים ללמידה, אבל אין סוף לאפשרויות! כל מפגש הופך למסיבה של תרגילים מלוכלכים וכשפים מפתיעים."
         <cite>– המזל הנצחי</cite>
       </blockquote>
     </section>
   </main>
 
-  <!-- =========== כותרת תחתונה =========== -->
   <footer class="home-footer">
     <p>&copy; 2025 גוגומטיק. כל הזכויות שמורות.</p>
   </footer>
