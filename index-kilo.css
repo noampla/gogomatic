@@ -272,3 +272,12 @@
     text-align: center;
   }
   
+  @media (max-width: 480px) {
+    .overlay {
+        margin: 20px;
+        background: rgba(0, 0, 0, 0.45);
+    }
+    .hero {
+        height: unset;
+    }
+  }
