@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "gogomatic"
-  }
+    "default": "gogomatic",
+    "kiloaweek": "kiloaweek-86484"
+  },
+  "targets": {},
+  "etags": {}
 }
