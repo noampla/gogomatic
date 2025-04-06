@@ -19,6 +19,9 @@ copy rulebook.css public\
 copy strategy.css public\
 copy cardtypes.css public\
 
+copy index-kilo.html public\
+copy index-kilo.css public\
+
 copy script.js public\
 
 echo Copying assets folder...
