@@ -39,7 +39,7 @@
   
 /* Hero Section */
   .hero {
-    background: url('assets/images/kilo-bg.jpg') no-repeat center center/cover;
+    background: url('assets/images/kilo-bg-small.jpg') no-repeat center center/cover;
     height: 100vh;
     position: relative;
     display: flex;
@@ -210,4 +210,59 @@
     background: #d84315;
     transform: scale(1.05);
   }
+  
+  .story {
+    background-color: #fffaf0;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 3rem;
+  }
+  
+  .story h3 {
+    font-size: 1.8rem;
+    color: #e65100;
+    margin-bottom: 1.2rem;
+  }
+  
+  .story p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #333;
+    line-height: 1.7;
+  }
+
+  .ai-support {
+    background-color: #f3faff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 3rem;
+  }
+  
+  .ai-support h3 {
+    font-size: 1.8rem;
+    color: #0277bd;
+    margin-bottom: 1rem;
+  }
+  
+  .ai-support p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .ai-support ul {
+    list-style: disc;
+    padding-right: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .ai-support ul li {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+    color: #222;
+  }
+  
   
