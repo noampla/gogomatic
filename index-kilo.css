@@ -271,6 +271,8 @@
     margin: 1rem 0;
     text-align: center;
   }
+
+
   
   @media (max-width: 480px) {
     .overlay {
@@ -280,4 +282,53 @@
     .hero {
         height: unset;
     }
+  }
+
+  .floating-person {
+    position: fixed;     /* כדי שיצמד למסך בכל גלילה */
+    bottom: -10px;        /* כמה רחוק מהרצפה */
+    left: 20px;          /* כמה רחוק מהצד */
+    z-index: 9999;       /* שיהיה מעל כל האלמנטים */
+  }
+  
+  .floating-person img {
+    max-width: 300px;    /* מתאים לגודל התמונה, אפשר לשחק עם זה */
+    border-radius: 8px;  /* אם תרצה פינות מעוגלות */
+    opacity: 0.8;
+  }
+
+  .bottom-section {
+    display: none;
+  }
+  
+  /* במסכים עד 480px - הקטנה משמעותית או הסתרה */
+@media (max-width: 480px) {
+    .footer {
+        position: absolute;
+        width: 100%;
+    }
+
+    .bottom-section {
+        display: flex;
+        z-index: 1;
+        /* אפשר להוסיף עוד עיצוב לפי הטעם */
+      }
+      
+      .bottom-left {
+        position: absolute;
+        opacity: 0.8;
+        left: 0px;
+        transform: translateY(-180px);
+      }
+      
+      .my-bottom-img {
+        height: 200px;
+      }
+
+      .floating-person {
+        img {
+            display: none;
+        }
+      }
+      
   }
