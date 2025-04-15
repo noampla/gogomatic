@@ -68,6 +68,7 @@
     margin-bottom: 1.5rem;
   }
   .cta-button {
+    margin-top: 10px;
     display: inline-block;
     background: #ff9800;
     color: #fff;
@@ -332,3 +333,79 @@
       }
       
   }
+
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: block;
+  }
+
+  .whatsapp-float img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  @media (max-width: 768px) {
+    .whatsapp-float {
+        right: unset;
+        left: 20px;
+    }
+  }
+  
+  .cta-button.whatsapp {
+    display: inline-block;
+    background-color: #25D366; /* ירוק של וואטסאפ */
+    color: white;
+    padding: 0.8rem 1.8rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .cta-button.whatsapp:hover {
+    background-color: #1ebe5d;
+    transform: scale(1.05);
+  }
+  
+  .what-you-get {
+    background: #fff3e0;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 3rem;
+    text-align: right;
+  }
+  
+  .what-you-get h3 {
+    font-size: 1.8rem;
+    color: #e65100;
+    margin-bottom: 1.2rem;
+  }
+  
+  .benefit-list {
+    list-style: none;
+    padding-right: 0;
+    margin: 0;
+  }
+  
+  .benefit-list li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    padding-right: 1.5rem;
+    position: relative;
+  }
+  
+  .benefit-list li::before {
+    content: "✔";
+    position: absolute;
+    right: 0;
+    color: #e65100;
+    font-weight: bold;
+  }
+  
