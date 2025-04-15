@@ -24,11 +24,7 @@
       <p class="lifestyle-tagline">
         כולל ליווי בוואטסאפ, טבלת מעקב, תוכנית מותאמת אישית ושימוש חכם ב-AI. 
       </p>
-      <a href="https://wa.me/972545567213?text=שלום,%20אני%20רוצה%20לשמוע%20עוד%20על%20התוכנית"
-        class="cta-button whatsapp">
-        שלח לי הודעה עכשיו
-      </a>
-
+      <a href="#form" class="cta-button attention-button">השאר פרטים ואחזור אליך</a>
     </div>
   </header>
   
@@ -181,7 +177,26 @@
             צור קשר בוואצאפ
           </a>
         </div>
-      </section>        
+      </section>      
+      
+      <section id="form" class="section contact-form">
+        <h3>רוצה שנחזור אליך?</h3>
+        <p>השאר פרטים ואחזור אליך לשיחה קצרה – בלי התחייבות.</p>
+      
+        <form action="https://formspree.io/f/xyzevdpo" method="POST">
+          <label for="name">שם מלא:</label>
+          <input type="text" id="name" name="name" required>
+      
+          <label for="phone">מספר טלפון:</label>
+          <input type="tel" id="phone" name="phone" required>
+      
+          <label for="message">הודעה (לא חובה):</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+      
+          <button type="submit" class="cta-button whatsapp">שלח פרטים</button>
+        </form>
+      </section>
+      
 
     <!-- Contact Section -->
     <section id="contact" class="section contact">
