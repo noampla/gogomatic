@@ -156,6 +156,557 @@
       </ol>
     </section>
 
+    <!-- Quiz Section -->
+<section id="quiz" class="section quiz">
+    <h3>האם אתה מוכן לשינוי?</h3>
+    <p>ענה על 3 שאלות קצרות וגלה אם התוכנית שלנו מתאימה לך!</p>
+    <div class="quiz-container">
+      <div class="quiz-question" id="question-1">
+        <h4>מה המטרה הבריאותית שלך?</h4>
+        <label><input type="radio" name="q1" value="weight-loss" required> לרדת במשקל</label>
+        <label><input type="radio" name="q1" value="feel-better"> להרגיש טוב יותר</label>
+        <label><input type="radio" name="q1" value="both"> גם וגם!</label>
+      </div>
+      <div class="quiz-question" id="question-2" style="display: none;">
+        <h4>כמה זמן אתה מוכן להשקיע בשבוע?</h4>
+        <label><input type="radio" name="q2" value="little" required> כמה שעות בודדות</label>
+        <label><input type="radio" name="q2" value="moderate"> כמה שעות קבועות</label>
+        <label><input type="radio" name="q2" value="a-lot"> כמה שצריך!</label>
+      </div>
+      <div class="quiz-question" id="question-3" style="display: none;">
+        <h4>מה הכי חשוב לך בתוכנית?</h4>
+        <label><input type="radio" name="q3" value="support" required> ליווי אישי</label>
+        <label><input type="radio" name="q3" value="results"> תוצאות מהירות</label>
+        <label><input type="radio" name="q3" value="both"> גם תמיכה וגם תוצאות</label>
+      </div>
+      <div class="quiz-result" id="quiz-result" style="display: none;">
+        <h4>התוצאה שלך:</h4>
+        <p id="result-text"></p>
+        <div class="quiz-cta">
+          <a href="#form" class="cta-button">השאר פרטים עכשיו!</a>
+          <a href="https://wa.me/972545567213?text=שלום,%20עניתי%20על%20השאלון%20ואני%20רוצה%20לשמוע%20עוד%20על%20קילו%20בשבוע" class="cta-button whatsapp" target="_blank">שלח וואטסאפ</a>
+        </div>
+      </div>
+      <button class="cta-button quiz-next" id="quiz-next">הבא</button>
+    </div>
+  </section>
+  
+  <style>
+  /* Quiz Section */
+  .quiz {
+    background: linear-gradient(135deg, #fffde7 0%, #fff8d6 100%);
+    text-align: center;
+  }
+  
+  .quiz-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+  
+  .quiz-question {
+    margin-bottom: 1.5rem;
+  }
+  
+  .quiz-question h4 {
+    font-size: 1.5rem;
+    color: #ff6f00;
+    margin-bottom: 1rem;
+  }
+  
+  .quiz-question label {
+    display: block;
+    margin: 0.8rem 0;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .quiz-question label:hover {
+    transform: translateX(5px);
+  }
+  
+  .quiz-question input[type="radio"] {
+    margin-left: 0.5rem;
+    accent-color: #ff6f00;
+  }
+  
+  .quiz-result {
+    background: #fff3e0;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.5s ease-out;
+  }
+  
+  .quiz-result p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .quiz-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .quiz-next {
+    background: linear-gradient(135deg, #ff6f00 0%, #ff8f00 100%);
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+  }
+  
+  .quiz-next:hover {
+    background: linear-gradient(135deg, #e65c00 0%, #ff6f00 100%);
+    transform: translateY(-3px);
+  }
+  
+  /* Animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Mobile Optimization */
+  @media (max-width: 768px) {
+    .quiz-container {
+      padding: 0.5rem;
+    }
+  
+    .quiz-question h4 {
+      font-size: 1.3rem;
+    }
+  
+    .quiz-question label {
+      font-size: 1rem;
+    }
+  
+    .quiz-result p {
+      font-size: 1rem;
+    }
+  
+    .quiz-cta {
+      flex-direction: column;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .quiz-question h4 {
+      font-size: 1.2rem;
+    }
+  
+    .quiz-question label {
+      font-size: 0.95rem;
+      margin: 0.6rem 0;
+    }
+  
+    .quiz-next {
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+    }
+  }
+  </style>
+  
+  <script>
+  // Quiz Logic
+  const questions = ['question-1', 'question-2', 'question-3'];
+  let currentQuestion = 0;
+  const nextButton = document.getElementById('quiz-next');
+  const resultDiv = document.getElementById('quiz-result');
+  const resultText = document.getElementById('result-text');
+  
+  nextButton.addEventListener('click', () => {
+    const currentQ = document.getElementById(questions[currentQuestion]);
+    const radios = currentQ.querySelectorAll('input[type="radio"]:checked');
+  
+    if (radios.length === 0) {
+      alert('אנא בחר תשובה כדי להמשיך!');
+      return;
+    }
+  
+    currentQ.style.display = 'none';
+    currentQuestion++;
+  
+    if (currentQuestion < questions.length) {
+      document.getElementById(questions[currentQuestion]).style.display = 'block';
+    } else {
+      nextButton.style.display = 'none';
+      resultDiv.style.display = 'block';
+  
+      // Simple result logic based on answers
+      const q1 = document.querySelector('input[name="q1"]:checked').value;
+      const q2 = document.querySelector('input[name="q2"]:checked').value;
+      const q3 = document.querySelector('input[name="q3"]:checked').value;
+  
+      let result = 'נראה שאתה מוכן לשינוי! התוכנית שלנו תתאים בדיוק למטרות שלך עם ליווי אישי ותוכנית מותאמת.';
+      if (q1 === 'weight-loss' && q3 === 'results') {
+        result = 'אתה ממוקד תוצאות! עם התוכנית שלנו תוכל לראות ירידה במשקל תוך שבועות.';
+      } else if (q2 === 'little' && q3 === 'support') {
+        result = 'אתה מחפש תמיכה עם מינימום זמן? הליווי האישי שלנו מושלם בשבילך!';
+      }
+  
+      resultText.textContent = result + ' השאר פרטים עכשיו ונתחיל!';
+    }
+  });
+  </script>
+
+  <!-- Weight Loss Game Section -->
+<section id="weight-loss-game" class="section weight-loss-game">
+    <h3>המסע של דני לבריאות!</h3>
+    <p>עזור לדני לאסוף מזון בריא ופעילויות ספורט כדי לרדת במשקל!</p>
+    <div class="game-container">
+      <div class="game-area" id="game-area">
+        <div class="game-score" id="game-score">נקודות: 0</div>
+        <div class="game-character" id="danny">
+          <div class="danny-head"></div>
+          <div class="danny-body"></div>
+        </div>
+      </div>
+      <div class="game-result" id="game-result" style="display: none;">
+        <h4>התוצאה שלך:</h4>
+        <p id="result-text1"></p>
+        <div class="game-cta">
+          <a href="#form" class="cta-button">השאר פרטים עכשיו!</a>
+          <a href="https://wa.me/972545567213?text=שלום,%20שיחקתי%20במשחק%20דני%20ואני%20רוצה%20לשמוע%20עוד%20על%20קילו%20בשבוע" class="cta-button whatsapp" target="_blank">שלח וואטסאפ</a>
+        </div>
+      </div>
+      <button class="cta-button game-start" id="game-start">התחל משחק!</button>
+    </div>
+  </section>
+  
+  <style>
+  /* Weight Loss Game Section */
+  .weight-loss-game {
+    background: linear-gradient(135deg, #fffde7 0%, #fff8d6 100%);
+    text-align: center;
+  }
+  
+  .game-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+  
+  .game-area {
+    position: relative;
+    height: 400px;
+    background: #fff3e0;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .game-score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #ff6f00;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  
+  .game-character {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .danny-head {
+    width: 40px;
+    height: 40px;
+    background: #ffcc99; /* עור בהיר */
+    border-radius: 50%;
+    position: relative;
+    margin-bottom: -10px;
+  }
+  
+  .danny-head::before {
+    content: '😊';
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .danny-body {
+    width: 60px;
+    height: 80px;
+    background: linear-gradient(135deg, #ff9999 0%, #ffcccc 100%); /* חולצה ורודה */
+    border-bottom: 20px solid #4682b4; /* מכנסיים כחולים */
+    border-radius: 10px;
+    transition: width 0.5s ease, height 0.5s ease;
+  }
+  
+  .game-icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    cursor: pointer;
+    animation: fall 3s linear;
+  }
+  
+  @keyframes fall {
+    0% {
+      top: -50px;
+      opacity: 1;
+    }
+    100% {
+      top: 100%;
+      opacity: 0.5;
+    }
+  }
+  
+  .game-result {
+    background: #fff3e0;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.5s ease-out;
+  }
+  
+  .game-result p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .game-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .game-start {
+    background: linear-gradient(135deg, #ff6f00 0%, #ff8f00 100%);
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+  }
+  
+  .game-start:hover {
+    background: linear-gradient(135deg, #e65c00 0%, #ff6f00 100%);
+    transform: translateY(-3px);
+  }
+  
+  /* Animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Mobile Optimization */
+  @media (max-width: 768px) {
+    .game-container {
+      padding: 0.5rem;
+    }
+  
+    .game-area {
+      height: 300px;
+    }
+  
+    .game-character {
+      bottom: 15px;
+    }
+  
+    .danny-head {
+      width: 30px;
+      height: 30px;
+    }
+  
+    .danny-body {
+      width: 45px;
+      height: 60px;
+    }
+  
+    .game-icon {
+      width: 35px;
+      height: 35px;
+    }
+  
+    .game-score {
+      font-size: 1rem;
+      padding: 0.4rem 0.8rem;
+    }
+  
+    .game-result p {
+      font-size: 1rem;
+    }
+  
+    .game-cta {
+      flex-direction: column;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .game-area {
+      height: 250px;
+    }
+  
+    .game-character {
+      bottom: 10px;
+    }
+  
+    .danny-head {
+      width: 25px;
+      height: 25px;
+    }
+  
+    .danny-body {
+      width: 40px;
+      height: 50px;
+    }
+  
+    .game-icon {
+      width: 30px;
+      height: 30px;
+    }
+  
+    .game-start {
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+    }
+  
+    .game-result p {
+      font-size: 0.95rem;
+    }
+  }
+  </style>
+  
+  <script>
+  // Game Logic
+  const gameArea = document.getElementById('game-area');
+  const gameScore = document.getElementById('game-score');
+  const gameResult = document.getElementById('game-result');
+  const resultText1 = document.getElementById('result-text1');
+  const gameStart = document.getElementById('game-start');
+  const dannyBody = document.querySelector('.danny-body');
+  let score = 0;
+  let gameActive = false;
+  
+  // Icon options (using emoji)
+  const icons = [
+    '🍎', // Apple
+    '🥚', // Eggs
+'🥩', // Meat
+'🐟', // Fish
+'🍗', // Chicken
+    '🏋️‍♂️', // Weightlifting
+    '👟', // Running shoes
+  ];
+  
+  // Start game
+  gameStart.addEventListener('click', () => {
+    if (gameActive) return;
+    gameActive = true;
+    score = 0;
+    gameScore.textContent = 'נקודות: 0';
+    gameStart.style.display = 'none';
+    dannyBody.style.width = '60px'; // Reset Danny's body width
+    dannyBody.style.height = '80px'; // Reset Danny's body height
+    spawnIcons();
+    setTimeout(endGame, 15000); // Game lasts 15 seconds
+  });
+  
+  // Move Danny with mouse or touch
+  gameArea.addEventListener('mousemove', (e) => {
+    if (!gameActive) return;
+    const rect = gameArea.getBoundingClientRect();
+    let x = e.clientX - rect.left - 40; // Center Danny
+    x = Math.max(0, Math.min(x, rect.width - 60)); // Keep within bounds
+    document.querySelector('.game-character').style.left = `${x}px`;
+  });
+  
+  gameArea.addEventListener('touchmove', (e) => {
+    if (!gameActive) return;
+    e.preventDefault();
+    const rect = gameArea.getBoundingClientRect();
+    let x = e.touches[0].clientX - rect.left - 40;
+    x = Math.max(0, Math.min(x, rect.width - 60));
+    document.querySelector('.game-character').style.left = `${x}px`;
+  });
+  
+  // Spawn icons
+  function spawnIcons() {
+    if (!gameActive) return;
+    const icon = document.createElement('div');
+    icon.classList.add('game-icon');
+    icon.textContent = icons[Math.floor(Math.random() * icons.length)];
+    icon.style.fontSize = '2rem';
+    icon.style.left = `${Math.random() * (gameArea.offsetWidth - 40)}px`;
+  
+    gameArea.appendChild(icon);
+  
+    // Check collision
+    const checkCollision = setInterval(() => {
+      const iconRect = icon.getBoundingClientRect();
+      const dannyRect = document.querySelector('.game-character').getBoundingClientRect();
+      if (
+        iconRect.left < dannyRect.right &&
+        iconRect.right > dannyRect.left &&
+        iconRect.top < dannyRect.bottom &&
+        iconRect.bottom > dannyRect.top
+      ) {
+        score++;
+        gameScore.textContent = `נקודות: ${score}`;
+        icon.remove();
+        clearInterval(checkCollision);
+        // Make Danny slimmer
+        let currentWidth = parseInt(dannyBody.style.width) || 60;
+        let currentHeight = parseInt(dannyBody.style.height) || 80;
+        dannyBody.style.width = `${Math.max(40, currentWidth - 5)}px`;
+        dannyBody.style.height = `${Math.max(50, currentHeight - 5)}px`;
+      }
+    }, 50);
+  
+    setTimeout(() => {
+      icon.remove();
+      clearInterval(checkCollision);
+    }, 3000); // Icon falls for 3 seconds
+    setTimeout(spawnIcons, 1000); // Spawn new icon every second
+  }
+  
+  // End game
+  function endGame() {
+    gameActive = false;
+    gameArea.innerHTML = ''; // Clear icons
+    gameArea.style.display='none';
+    gameScore.style.display = 'none';
+    gameResult.style.display = 'block';
+    gameStart.style.display = 'block'; // Allow replay
+  
+    let result = `דני השיל ${score} קילו וירטואליים! מוכן להתחיל את המסע שלך עם קילו בשבוע?`;
+    if (score >= 10) {
+      result = `וואו, דני השיל ${score} קילו וירטואליים! אתה מוכן לשינוי מדהים – בוא נתחיל!`;
+    } else if (score < 5) {
+      result = `דני השיל ${score} קילו וירטואליים. בוא נתחיל את השינוי שלך עם תוכנית מותאמת!`;
+    }
+  
+    resultText1.textContent = result;
+  }
+  </script>
+
     <!-- Contact Form Section -->
     <section id="form" class="section contact-form">
       <h3>מוכן לשינוי? השאר פרטים עכשיו!</h3>
