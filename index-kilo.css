@@ -43,10 +43,15 @@
     backdrop-filter: blur(5px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     animation: fadeInUp 1s ease-out;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   
   .logo {
-    height: 160px;
+    height: 200px;
     margin-bottom: 1.5rem;
     transition: transform 0.3s ease;
   }
@@ -504,10 +509,6 @@
       padding: 5rem 1rem;
     }
   
-    .logo {
-      height: 120px;
-    }
-  
     .hero h2 {
       font-size: 1.8rem;
     }
@@ -622,11 +623,6 @@
       border-radius: 15px;
       width: 95%;
       backdrop-filter: blur(3px);
-    }
-  
-    .logo {
-      height: 100px;
-      margin-bottom: 1rem;
     }
   
     .hero h2 {
@@ -769,10 +765,6 @@
       padding: 1rem;
       border-radius: 12px;
       background: rgba(0, 0, 0, 0.65);
-    }
-  
-    .logo {
-      height: 80px;
     }
   
     .hero h2 {
