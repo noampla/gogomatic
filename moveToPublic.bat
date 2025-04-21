@@ -19,8 +19,8 @@ copy rulebook.css public\
 copy strategy.css public\
 copy cardtypes.css public\
 
-copy index-kilo.html public\index.html
-copy index-kilo.css public\
+copy index-dr.html public\index.html
+copy index-dr.css public\
 
 copy script.js public\
 
