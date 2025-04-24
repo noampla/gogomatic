@@ -32,21 +32,6 @@ header p {
   font-size: 4vw;
 }
 
-.hero-bg {
-  background: linear-gradient(to bottom, #fff1f0, #fdedec), url('https://via.placeholder.com/1200x600?text=Emotional+Journey');
-  background-size: cover;
-  background-position: center;
-  padding: 30px 0;
-  text-align: center;
-}
-
-.hero-img {
-  border-radius: 50%;
-  margin-bottom: 15px;
-  max-width: 40vw;
-  height: auto;
-}
-
 section {
   padding: 30px 0;
 }
@@ -80,6 +65,18 @@ section p {
 
 .bg-red {
   background: #fff1f0;
+}
+
+.show-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.show-poster {
+  max-width: 40vw;
+  height: auto;
 }
 
 .book-content {
@@ -153,7 +150,7 @@ section p {
 }
 
 .form-group textarea {
-  resize: vertical;
+  resize: verticalHtml;
 }
 
 footer {
@@ -183,10 +180,6 @@ footer p {
     font-size: 1.2em;
   }
 
-  .hero-img {
-    max-width: 200px;
-  }
-
   section h2 {
     font-size: 2em;
   }
@@ -197,6 +190,15 @@ footer p {
 
   .btn {
     font-size: 1em;
+  }
+
+  .show-content {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .show-poster {
+    max-width: 200px;
   }
 
   .book-content {
